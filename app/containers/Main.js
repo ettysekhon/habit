@@ -33,12 +33,12 @@ class Main extends Component {
     const { state, actions } = this.props
 
     if (route.id === 'habitdetail') {
-      return (<HabitDetail nav={nav} state={state.habit.selected} actions={actions} />)
+      return (<HabitDetail nav={nav} habit={state.habit.selected} actions={actions} />)
     } else {
-      return (<HabitList nav={nav} state={state.habit.all} actions={actions} />)
+      return (<HabitList nav={nav} habits={state.habit.all} actions={actions} />)
     }
   }
-  configureScene(route) {
+  configureScene() {
     return Navigator.SceneConfigs.FloatFromRight
   }
 }
