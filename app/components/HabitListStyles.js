@@ -6,7 +6,7 @@ const { width } = Dimensions.get('window')
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: 'rgb(46, 49, 58)',
+    backgroundColor: 'rgb(46,49,58)',
     paddingTop: PADDINGTOP,
     flex: 1,
     flexDirection: 'column'
@@ -29,7 +29,7 @@ export default StyleSheet.create({
     color: 'rgb(255,255,255)'
   },
   row: {
-    backgroundColor: 'rgb(58, 77, 153)',
+    backgroundColor: 'rgb(58,77,153)',
     height: 72,
     padding: 10,
     marginBottom: 1
@@ -38,7 +38,7 @@ export default StyleSheet.create({
     color: 'rgb(255,255,255)'
   },
   seconaryText: {
-    color: 'rgb(119, 139, 218)',
+    color: 'rgb(119,139,218)',
     fontSize: 12
   },
   container2: {

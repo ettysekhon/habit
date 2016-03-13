@@ -8,16 +8,17 @@ let HabitList = React.createClass({
     actions: PropTypes.object.isRequired
   },
   render: function () {
-    console.log(this.props.habits)
     const ds = new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 })
     const dataSource = ds.cloneWithRows(this.props.habits || [])
+    const header = 'It’s time to choose a habit'
+    const subheader = 'Good habits are the key to long term success regardless what your goal is. Pick one of the habits below to do daily for the next two weeks. Start with something you’re certain you can do and build on it.'
     return (
       <View style={styles.container}>
         <View style={styles.headerContainer}>
-          <Text style={styles.header}>It’s time to choose a habit</Text>
+          <Text style={styles.header}>{header}</Text>
         </View>
         <View style={styles.subheaderContainer}>
-          <Text style={styles.subheader}>Good habits are the key to long term success regardless what your goal is. Pick one of the habits below to do daily for the next two weeks. Start with something you’re certain you can do and build on it.</Text>
+          <Text style={styles.subheader}>{subheader}</Text>
         </View>
         <ListView
           automaticallyAdjustContentInsets={false}

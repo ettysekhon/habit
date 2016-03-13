@@ -7,7 +7,9 @@ import Main from '../components/Main'
 const mapStateToProps = state => ({ state })
 
 const mapDispatchToProps = dispatch => {
-  return { actions: bindActionCreators(Object.assign({}, authActions, habitActions), dispatch) }
+  return {
+    actions: bindActionCreators(Object.assign({}, authActions, habitActions), dispatch)
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main)
