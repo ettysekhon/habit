@@ -4,11 +4,12 @@ const initialState = {}
 
 export default function auth(state = initialState, action = {}) {
   switch (action.type) {
-    case actionTypes.AUTH_LOGIN_SUCCESS:
+    case actionTypes.LOGIN_SUCCESS:
       return {
         ...action.response
       }
-    case actionTypes.AUTH_LOGOUT:
+    case actionTypes.LOGIN_ERROR:
+    case actionTypes.LOGOUT:
       return {
         ...initialState
       }

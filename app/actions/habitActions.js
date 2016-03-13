@@ -2,16 +2,6 @@ import * as actionTypes from '../constants/actionTypes'
 import * as api from '../api/habitApi'
 import { makeAction } from '../utils/makeAction'
 
-// import mockedData from '../api/mockedData'
-// export const loadHabits = () => {
-//   return dispatch => {
-//     dispatch({
-//       type: actionTypes.HABIT_GETALL_SUCCESS,
-//       response: mockedData
-//     })
-//   }
-// }
-
 const getHabitsSuccess = makeAction(actionTypes.HABIT_GETALL_SUCCESS, 'response')
 const getHabitsError = makeAction(actionTypes.HABIT_GETALL_ERROR, 'error')
 
@@ -24,19 +14,32 @@ export const getHabits = () => {
   }
 }
 
-export const selectHabit = (selected) => {
-  return dispatch => {
-    dispatch({
-      type: actionTypes.HABIT_SELECT,
-      selected
-    })
-  }
-}
+export const selectHabit = makeAction(actionTypes.HABIT_SELECT, 'selected')
+export const unselectHabit = makeAction(actionTypes.HABIT_UNSELECT)
 
-export const unselectHabit = () => {
-  return dispatch => {
-    dispatch({
-      type: actionTypes.HABIT_UNSELECT
-    })
-  }
-}
+// import mockedData from '../api/mockedData'
+// export const loadHabits = () => {
+//   return dispatch => {
+//     dispatch({
+//       type: actionTypes.HABIT_GETALL_SUCCESS,
+//       response: mockedData
+//     })
+//   }
+// }
+
+// export const selectHabit = (selected) => {
+//   return dispatch => {
+//     dispatch({
+//       type: actionTypes.HABIT_SELECT,
+//       selected
+//     })
+//   }
+// }
+
+// export const unselectHabit = () => {
+//   return dispatch => {
+//     dispatch({
+//       type: actionTypes.HABIT_UNSELECT
+//     })
+//   }
+// }
