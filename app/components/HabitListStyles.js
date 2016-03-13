@@ -28,11 +28,9 @@ export default StyleSheet.create({
   subheader: {
     color: 'rgb(255,255,255)'
   },
-  rowContainer: {
-    alignSelf: 'stretch'
-  },
   row: {
     backgroundColor: 'rgb(58, 77, 153)',
+    height: 72,
     padding: 10,
     marginBottom: 1
   },

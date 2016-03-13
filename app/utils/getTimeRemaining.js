@@ -4,7 +4,7 @@ export default function getTimeRemaining(end) {
   let minutes = Math.floor( (t/1000/60) % 60 )
   let hours = Math.floor( (t/(1000 * 60 * 60)) % 24 )
   return {
-    'remaining': t,
+    'remainingTime': t,
     'hours': hours,
     'minutes': minutes,
     'seconds': seconds

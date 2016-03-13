@@ -16,7 +16,7 @@ let HabitDetail = React.createClass({
     return (
       <View style={styles.container}>
         <View style={styles.nameContainer}>
-          <Text style={styles.name}></Text>
+          <Text style={styles.nameLong}></Text>
         </View>
         <View style={styles.descriptionContainer}>
           <Text style={styles.description}></Text>

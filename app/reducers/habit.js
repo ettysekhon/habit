@@ -4,9 +4,9 @@ const initialState = { all: {}, started: {} }
 
 export default function habit(state = initialState, action = {}) {
   switch (action.type) {
-    case actionTypes.HABIT_LOAD_SUCCESS:
+    case actionTypes.HABIT_GETALL_SUCCESS:
       return {
-        all: { ...action.response },
+        all: { ...action.response.data },
         selected: {}
       }
     case actionTypes.HABIT_SELECT:

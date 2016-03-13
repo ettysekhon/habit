@@ -4,7 +4,7 @@ const initialState = {}
 
 export default function auth(state = initialState, action = {}) {
   switch (action.type) {
-    case actionTypes.AUTH_LOGIN:
+    case actionTypes.AUTH_LOGIN_SUCCESS:
       return {
         ...action.response
       }

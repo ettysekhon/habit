@@ -1,12 +1,26 @@
 import * as actionTypes from '../constants/actionTypes'
-import mockedData from '../api/mockedData'
+import * as api from '../api/habitApi'
+import { makeAction } from '../utils/makeAction'
 
-export const loadHabits = () => {
+// import mockedData from '../api/mockedData'
+// export const loadHabits = () => {
+//   return dispatch => {
+//     dispatch({
+//       type: actionTypes.HABIT_GETALL_SUCCESS,
+//       response: mockedData
+//     })
+//   }
+// }
+
+const getHabitsSuccess = makeAction(actionTypes.HABIT_GETALL_SUCCESS, 'response')
+const getHabitsError = makeAction(actionTypes.HABIT_GETALL_ERROR, 'error')
+
+export const getHabits = () => {
   return dispatch => {
-    dispatch({
-      type: actionTypes.HABIT_LOAD_SUCCESS,
-      response: mockedData
-    })
+    return api.getAll()
+    .then(response => response.json())
+    .then(json => dispatch(getHabitsSuccess(json)))
+    .catch(error => dispatch(getHabitsError(error)))
   }
 }
 

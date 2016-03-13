@@ -8,6 +8,7 @@ let HabitList = React.createClass({
     actions: PropTypes.object.isRequired
   },
   render: function () {
+    console.log(this.props.habits)
     const ds = new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 })
     const dataSource = ds.cloneWithRows(this.props.habits || [])
     return (
@@ -30,8 +31,8 @@ let HabitList = React.createClass({
     return (
       <TouchableHighlight key={`${sectionID}${rowID}`} onPress={() => this.pressRow(rowData)}>
         <View style={styles.row}>
-          <Text style={styles.primaryText}>{rowData.id}</Text>
-          <Text style={styles.seconaryText}>{rowData.title}</Text>
+          <Text style={styles.primaryText}>{rowData.name}</Text>
+          <Text style={styles.seconaryText}>{rowData.nameLong}</Text>
         </View>
       </TouchableHighlight>
     )
@@ -39,7 +40,7 @@ let HabitList = React.createClass({
   pressRow: function (rowData: {}) {
     this.props.actions.selectHabit(rowData)
     this.props.nav.replace({
-      id: 'habitdetail', title: rowData.title
+      id: 'habitdetail', title: rowData.name
     })
   }
 })
