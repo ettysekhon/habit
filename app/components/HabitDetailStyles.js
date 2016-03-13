@@ -1,37 +1,47 @@
 import React from 'react-native'
 const { StyleSheet } = React
+import PADDINGTOP from '../constants/paddingTop'
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: 'rgb(46,49,58)',
+    paddingTop: PADDINGTOP,
     flex: 1,
     flexDirection: 'column'
   },
-  nameContainer: {
+  subheaderContainer: {
     paddingHorizontal: 10,
     paddingTop: 10,
     paddingBottom: 5
   },
-  name: {
-    color: 'rgb(255,255,255)',
-    fontSize: 18
+  subheaderText: {
+    color: 'rgba(255,255,255,0.87)',
+    fontSize: 16
   },
   descriptionContainer: {
     paddingHorizontal: 10,
     paddingTop: 5,
-    paddingBottom: 15
+    paddingBottom: 15,
+    flex: 1
   },
-  description: {
-    color: 'rgb(255,255,255)'
+  descriptionText: {
+    color: 'rgba(255,255,255,0.54)',
+    fontSize: 14
   },
-  container2: {
-    flex: 1,
-    flexDirection: 'column'
+  buttonContainer: {
+    // alignItems: 'center',
+    // justifyContent: 'center'
   },
-  contentContainer2: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-around'
+  buttonText: {
+    color: 'rgba(255,255,255,0.87)',
+    fontSize: 16,
+    height: 72,
+    // textAlign: 'center',
+    alignSelf: 'stretch'
+  },
+  select: {
+    backgroundColor: 'rgb(0,150,136)'
+  },
+  unselect: {
+    backgroundColor: 'rgb(244,67,54)'
   }
 })

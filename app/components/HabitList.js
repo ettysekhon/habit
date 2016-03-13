@@ -1,25 +1,19 @@
-import React, { ListView, PropTypes, Text, TouchableHighlight, View } from 'react-native'
+import React, { Component, ListView, PropTypes, Text, TouchableHighlight, View } from 'react-native'
+import SectionHeader from './SectionHeader'
 import styles from './HabitListStyles'
 
-let HabitList = React.createClass({
-  propTypes: {
+export default class HabitList extends Component {
+  static propTypes = {
     nav: PropTypes.object.isRequired,
     habits: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
-  },
-  render: function () {
+  };
+  render = () => {
     const ds = new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 })
     const dataSource = ds.cloneWithRows(this.props.habits || [])
-    const header = 'It’s time to choose a habit'
-    const subheader = 'Good habits are the key to long term success regardless what your goal is. Pick one of the habits below to do daily for the next two weeks. Start with something you’re certain you can do and build on it.'
     return (
       <View style={styles.container}>
-        <View style={styles.headerContainer}>
-          <Text style={styles.header}>{header}</Text>
-        </View>
-        <View style={styles.subheaderContainer}>
-          <Text style={styles.subheader}>{subheader}</Text>
-        </View>
+        <SectionHeader />
         <ListView
           automaticallyAdjustContentInsets={false}
           dataSource={dataSource}
@@ -27,22 +21,21 @@ let HabitList = React.createClass({
         />
       </View>
     )
-  },
-  renderRow: function (rowData: {}, sectionID: number, rowID: number) {
+  };
+  renderRow = (rowData: {}, sectionID: number, rowID: number) => {
     return (
       <TouchableHighlight key={`${sectionID}${rowID}`} onPress={() => this.pressRow(rowData)}>
         <View style={styles.row}>
-          <Text style={styles.primaryText}>{rowData.name}</Text>
-          <Text style={styles.seconaryText}>{rowData.nameLong}</Text>
+          <Text style={styles.rowPrimaryText}>{rowData.name}</Text>
+          <Text style={styles.rowSeconaryText}>{rowData.nameLong}</Text>
         </View>
       </TouchableHighlight>
     )
-  },
-  pressRow: function (rowData: {}) {
+  };
+  pressRow = (rowData: {}) => {
     this.props.actions.selectHabit(rowData)
     this.props.nav.replace({
       id: 'habitdetail', title: rowData.name
     })
-  }
-})
-export default HabitList
+  };
+}

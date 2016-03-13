@@ -1,40 +1,39 @@
-import React, { PropTypes, Text, View } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import React, { Component, PropTypes, Text, View } from 'react-native'
 import Button from './Button'
 import styles from './HabitDetailStyles'
 
-let HabitDetail = React.createClass({
-  propTypes: {
+export default class HabitDetail extends Component {
+  static propTypes = {
     nav: PropTypes.object.isRequired,
     habit: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
-  },
-  getInitialState: function () {
-    return { habit: this.props.habit || {} }
-  },
-  render: function () {
+  };
+  render = () => {
+    const { habit } = this.props
     return (
-      <View style={styles.container}>
-        <View style={styles.nameContainer}>
-          <Text style={styles.nameLong}></Text>
-        </View>
-        <View style={styles.descriptionContainer}>
-          <Text style={styles.description}></Text>
-        </View>
-        <View style={styles.buttonContainer}>
-          {(this.state.habit.started)
-            ?
-            <Button onPress={this.props.actions.unselectHabit}>
-              <Icon name="stop" size={112} />
-            </Button>
-            :
-            <Button onPress={this.props.actions.selectHabit}>
-              <Icon name="play-arrow" size={112} />
-            </Button>
-          }
-        </View>
+    <View style={styles.container}>
+      <View style={styles.subheaderContainer}>
+        <Text style={styles.subheaderText}>{habit.nameLong}</Text>
       </View>
-    )
-  }
-})
-export default HabitDetail
+      <View style={styles.descriptionContainer}>
+        <Text style={styles.descriptionText}>{habit.description}</Text>
+      </View>
+      <View style={styles.buttonContainer}>
+        {(habit.selected)
+          ?
+          <Button onPress={() => this.props.actions.unselectHabit(habit)}>
+            <View style={{ alignItems: 'center' }}>
+              <Text style={[ styles.buttonText, styles.unselect ]}>UNSELECT</Text>
+            </View>
+          </Button>
+          :
+          <Button onPress={() => this.props.actions.selectHabit(habit)}>
+            <View style={{ alignItems: 'center' }}>
+              <Text style={[ styles.buttonText, styles.select ]}>SELECT</Text>
+            </View>
+          </Button>
+        }
+      </View>
+    </View>
+  )};
+}
