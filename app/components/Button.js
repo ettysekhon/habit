@@ -1,4 +1,4 @@
-import React, { Component, PropTypes, TouchableHighlight, View } from 'react-native'
+import React, { Component, PropTypes, TouchableHighlight } from 'react-native'
 
 export default class Button extends Component {
   static propTypes = {
@@ -8,9 +8,7 @@ export default class Button extends Component {
   render() {
     return (
       <TouchableHighlight onPress={this.props.onPress}>
-        <View>
-          {this.props.children}
-        </View>
+        {this.props.children}
       </TouchableHighlight>
     )
   }

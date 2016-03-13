@@ -28,15 +28,15 @@ export default StyleSheet.create({
     fontSize: 14
   },
   buttonContainer: {
-    // alignItems: 'center',
-    // justifyContent: 'center'
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    justifyContent: 'center'
   },
   buttonText: {
     color: 'rgba(255,255,255,0.87)',
     fontSize: 16,
     height: 72,
-    // textAlign: 'center',
-    alignSelf: 'stretch'
+    textAlign: 'center'
   },
   select: {
     backgroundColor: 'rgb(0,150,136)'

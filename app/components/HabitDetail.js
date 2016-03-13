@@ -18,17 +18,17 @@ export default class HabitDetail extends Component {
       <View style={styles.descriptionContainer}>
         <Text style={styles.descriptionText}>{habit.description}</Text>
       </View>
-      <View style={styles.buttonContainer}>
+      <View>
         {(habit.selected)
           ?
           <Button onPress={() => this.props.actions.unselectHabit(habit)}>
-            <View style={{ alignItems: 'center' }}>
+            <View style={styles.buttonContainer}>
               <Text style={[ styles.buttonText, styles.unselect ]}>UNSELECT</Text>
             </View>
           </Button>
           :
           <Button onPress={() => this.props.actions.selectHabit(habit)}>
-            <View style={{ alignItems: 'center' }}>
+            <View style={styles.buttonContainer}>
               <Text style={[ styles.buttonText, styles.select ]}>SELECT</Text>
             </View>
           </Button>
