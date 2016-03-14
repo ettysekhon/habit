@@ -28,12 +28,20 @@ export default class HabitDetail extends Component {
           </Button>
           :
           <Button onPress={() => this.props.actions.selectHabit(habit)}>
-            <View style={styles.buttonContainer}>
-              <Text style={[ styles.buttonText, styles.select ]}>SELECT</Text>
+            <View style={[ styles.buttonContainer, styles.select ]}>
+              <Text style={styles.buttonText}>SELECT</Text>
             </View>
           </Button>
         }
       </View>
+      <View>
+        <Button onPress={() => this.onBack}>
+          <View style={styles.buttonContainer}>
+            <Text style={styles.buttonText}>BACK</Text>
+          </View>
+        </Button>
+      </View>
     </View>
   )};
+  onBack = () => this.props.nav.pop();
 }

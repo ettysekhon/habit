@@ -9,18 +9,16 @@ export default StyleSheet.create({
     flexDirection: 'column'
   },
   subheaderContainer: {
-    paddingHorizontal: 10,
-    paddingTop: 10,
-    paddingBottom: 5
+    paddingHorizontal: 8,
+    paddingLeft: 16
   },
   subheaderText: {
     color: 'rgba(255,255,255,0.87)',
     fontSize: 16
   },
   descriptionContainer: {
-    paddingHorizontal: 10,
-    paddingTop: 5,
-    paddingBottom: 15,
+    paddingHorizontal: 8,
+    paddingLeft: 16,
     flex: 1
   },
   descriptionText: {
@@ -28,15 +26,15 @@ export default StyleSheet.create({
     fontSize: 14
   },
   buttonContainer: {
+    backgroundColor: 'rgb(244,67,54)',
+    height: 72,
+    flex: 1,
     alignItems: 'center',
-    alignSelf: 'stretch',
     justifyContent: 'center'
   },
   buttonText: {
     color: 'rgba(255,255,255,0.87)',
-    fontSize: 16,
-    height: 72,
-    textAlign: 'center'
+    fontSize: 16
   },
   select: {
     backgroundColor: 'rgb(0,150,136)'

@@ -34,8 +34,6 @@ export default class HabitList extends Component {
   };
   pressRow = (rowData: {}) => {
     this.props.actions.selectHabit(rowData)
-    this.props.nav.replace({
-      id: 'habitdetail', title: rowData.name
-    })
+    this.props.nav.replace({ id: 'habitdetail', title: rowData.name })
   };
 }
