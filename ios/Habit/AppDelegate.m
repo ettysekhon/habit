@@ -22,7 +22,9 @@
   NSLog(@"Launching Couchbase Lite...");
   CBLManager* dbmgr = [CBLManager sharedInstance];
   CBLRegisterJSViewCompiler();
-  NSLog(@"Couchbase Lite url = %@", dbmgr.internalURL);
+  CBLListener* listener = [[CBLListener alloc] initWithManager:dbmgr port:5800];
+  [listener start:nil];
+  NSLog(@"Couchbase Lite url = %@, and port %d", dbmgr.internalURL, listener.port);
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

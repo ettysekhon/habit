@@ -14,33 +14,5 @@ export const getHabits = () => {
   }
 }
 
-// export const selectHabit = makeAction(actionTypes.HABIT_SELECT, 'selected')
+export const selectHabit = makeAction(actionTypes.HABIT_SELECT, 'selected')
 export const unselectHabit = makeAction(actionTypes.HABIT_UNSELECT)
-
-// import mockedData from '../api/mockedData'
-// export const loadHabits = () => {
-//   return dispatch => {
-//     dispatch({
-//       type: actionTypes.HABIT_GETALL_SUCCESS,
-//       response: mockedData
-//     })
-//   }
-// }
-
-export const selectHabit = (selected) => {
-  console.log('selectHabit', selected)
-  return dispatch => {
-    dispatch({
-      type: actionTypes.HABIT_SELECT,
-      selected
-    })
-  }
-}
-
-// export const unselectHabit = () => {
-//   return dispatch => {
-//     dispatch({
-//       type: actionTypes.HABIT_UNSELECT
-//     })
-//   }
-// }

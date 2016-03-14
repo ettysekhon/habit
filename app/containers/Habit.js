@@ -2,31 +2,22 @@ import React, { Component } from 'react-native'
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
+import createLogger from 'redux-logger'
 import * as reducers from '../reducers/reducers'
 import Main from './Main'
+import { createDatabase } from '../utils/createDatabase'
 
-const database = 'http://lite.couchbase./habit/'
-fetch(database).then(response => {
-  console.log('connect', response)
-  if (response.status !== 200) {
-    return fetch(database, { method: 'PUT' })
-    .then(response => response.json()).then(data => {
-      console.log(data)
-      return data
-    }).catch(error => console.log(error))
-  }
-}).catch(error => console.log('connect error', error))
+createDatabase() //We create a database to store habits locally.
 
-// import createLogger from 'redux-logger'
-// const logger = createLogger()
-// let createStoreWithMiddleware
-// if (__DEV__) {
-//   createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore)
-// } else {
-//   createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
-// }
+const logger = createLogger()
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
+let createStoreWithMiddleware
+if (__DEV__) {
+  createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore)
+} else {
+  createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
+}
+
 const reducer = combineReducers(reducers)
 const store = createStoreWithMiddleware(reducer)
 
