@@ -7,18 +7,15 @@ export default StyleSheet.create({
     paddingTop: PADDINGTOP
   },
   headerContainer: {
-    paddingHorizontal: 10,
-    paddingTop: 10,
-    paddingBottom: 5
+    paddingLeft: 16
   },
   headerText: {
     color: 'rgba(255,255,255,0.87)',
     fontSize: 16
   },
   subheaderContainer: {
-    paddingHorizontal: 10,
-    paddingTop: 5,
-    paddingBottom: 15
+    paddingVertical: 8,
+    paddingLeft: 16
   },
   subheaderText: {
     color: 'rgba(255,255,255,0.54)',

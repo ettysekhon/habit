@@ -8,16 +8,15 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'column'
   },
-  subheaderContainer: {
-    paddingHorizontal: 8,
+  headerContainer: {
+    paddingBottom: 8,
     paddingLeft: 16
   },
-  subheaderText: {
+  headerText: {
     color: 'rgba(255,255,255,0.87)',
     fontSize: 16
   },
   descriptionContainer: {
-    paddingHorizontal: 8,
     paddingLeft: 16,
     flex: 1
   },
@@ -26,7 +25,6 @@ export default StyleSheet.create({
     fontSize: 14
   },
   buttonContainer: {
-    backgroundColor: 'rgb(244,67,54)',
     height: 72,
     flex: 1,
     alignItems: 'center',

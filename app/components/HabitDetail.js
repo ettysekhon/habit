@@ -12,8 +12,8 @@ export default class HabitDetail extends Component {
     const { habit } = this.props
     return (
     <View style={styles.container}>
-      <View style={styles.subheaderContainer}>
-        <Text style={styles.subheaderText}>{habit.nameLong}</Text>
+      <View style={styles.headerContainer}>
+        <Text style={styles.headerText}>{habit.nameLong}</Text>
       </View>
       <View style={styles.descriptionContainer}>
         <Text style={styles.descriptionText}>{habit.description}</Text>
