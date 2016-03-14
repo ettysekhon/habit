@@ -13,10 +13,10 @@ export default class HabitDetail extends Component {
     return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={styles.headerText}>{habit.nameLong}</Text>
+        <Text style={styles.header}>{habit.nameLong}</Text>
       </View>
-      <View style={styles.descriptionContainer}>
-        <Text style={styles.descriptionText}>{habit.description}</Text>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>{habit.description}</Text>
       </View>
       <View>
         {(habit.selected)

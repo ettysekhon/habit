@@ -25,9 +25,9 @@ export default class HabitList extends Component {
   renderRow = (rowData: {}, sectionID: number, rowID: number) => {
     return (
       <TouchableHighlight key={`${sectionID}${rowID}`} onPress={() => this.pressRow(rowData)}>
-        <View style={styles.row}>
-          <Text style={styles.rowPrimaryText}>{rowData.name}</Text>
-          <Text style={styles.rowSeconaryText}>{rowData.nameLong}</Text>
+        <View style={styles.rowContainer}>
+          <Text style={styles.rowHeader}>{rowData.name}</Text>
+          <Text style={styles.rowText}>{rowData.nameLong}</Text>
         </View>
       </TouchableHighlight>
     )

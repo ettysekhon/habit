@@ -9,7 +9,7 @@ export default StyleSheet.create({
   headerContainer: {
     paddingLeft: 16
   },
-  headerText: {
+  header: {
     color: 'rgba(255,255,255,0.87)',
     fontSize: 16
   },
@@ -17,7 +17,7 @@ export default StyleSheet.create({
     paddingVertical: 8,
     paddingLeft: 16
   },
-  subheaderText: {
+  subheader: {
     color: 'rgba(255,255,255,0.54)',
     fontSize: 14
   }
