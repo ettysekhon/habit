@@ -1,5 +1,5 @@
 import React, { Component, PropTypes, Text, View } from 'react-native'
-import Button from './Button'
+import Button from '../components/Button'
 import styles from './HabitDetailStyles'
 
 export default class HabitDetail extends Component {
@@ -39,7 +39,7 @@ export default class HabitDetail extends Component {
         }
       </View>
       <View>
-        <Button onPress={() => this.onBack}>
+        <Button onPress={this.onBack}>
           <View style={styles.buttonContainer}>
             <Text style={styles.buttonText}>BACK</Text>
           </View>

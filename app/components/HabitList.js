@@ -1,5 +1,5 @@
 import React, { Component, ListView, PropTypes, Text, TouchableHighlight, View } from 'react-native'
-import SectionHeader from './SectionHeader'
+import SectionHeader from '../components/SectionHeader'
 import styles from './HabitListStyles'
 
 export default class HabitList extends Component {
