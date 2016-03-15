@@ -3,14 +3,14 @@ const { StyleSheet } = React
 
 export default StyleSheet.create({
   title: {
-    color: 'rgba(255,255,255,0.87)',
-    fontSize: 16
+    color: 'rgb(255,255,255)',
+    fontSize: 24
   },
   buttonText: {
     color: 'rgba(255,255,255,0.87)',
     fontSize: 16
   },
   leftButton: {
-    paddingLeft: 8
+    paddingLeft: 16
   }
 })

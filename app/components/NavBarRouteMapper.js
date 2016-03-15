@@ -3,26 +3,20 @@ import styles from './NavBarRouteMapperStyles'
 
 export const NavBarRouteMapper = {
   Title: function Title(route) {
-    if (route.id === 'habitlist') {
-      return <Text style={styles.title}>{route.title}</Text>
-    } else {
-      return null
-    }
+    return <Text style={styles.title}>{route.title}</Text>
   },
-  LeftButton: function LeftButton(route, navigator, index) {
+  LeftButton: function LeftButton(route, navigator) {
     if (route.id === 'habitlist') {
       return null
     } else {
       return (
         <TouchableHighlight onPress={() => navigator.pop()}>
           <Text style={[ styles.leftButton, styles.buttonText ]}>
-            BACK {route.id} {index}
+            Back
           </Text>
         </TouchableHighlight>
       )
     }
   },
-  RightButton: function RightButton() {
-    return null
-  }
+  RightButton: function RightButton() { return null }
 }
