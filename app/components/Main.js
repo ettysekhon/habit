@@ -24,7 +24,11 @@ export default class Main extends Component {
           ref="navigator"
           initialRoute={{ id: 'habitlist', title: 'Habits' }}
           renderScene={this.renderScene}
-          navigationBar={<Navigator.NavigationBar routeMapper={NavBarRouteMapper} />}
+          navigationBar={
+            <Navigator.NavigationBar
+              style={styles.navigationBar}
+              routeMapper={NavBarRouteMapper}
+            />}
           configureScene={this.configureScene}
         />
       </View>

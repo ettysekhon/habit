@@ -16,7 +16,8 @@ export default StyleSheet.create({
   header: {
     color: 'rgba(0,0,0,0.87)',
     fontSize: 16,
-    marginBottom: 8
+    marginTop: 24,
+    marginBottom: 16
   },
   contentText: {
     color: 'rgba(0,0,0,0.54)',
