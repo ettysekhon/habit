@@ -7,7 +7,7 @@ export default StyleSheet.create({
     fontSize: 24
   },
   buttonText: {
-    color: 'rgba(255,255,255,0.87)',
+    color: 'rgb(255,255,255)',
     fontSize: 16
   },
   leftButton: {

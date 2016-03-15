@@ -6,11 +6,11 @@ import createLogger from 'redux-logger'
 import * as reducers from '../reducers/reducers'
 import Main from './Main'
 import { createDatabase } from '../utils/createDatabase'
-import { createRecord } from '../utils/createRecord'
+import { createDocument } from '../utils/createDocument'
 import data from '../api/mocked.json'
 
 createDatabase()
-createRecord(data)
+createDocument(data)
 
 const logger = createLogger()
 
