@@ -6,8 +6,11 @@ import createLogger from 'redux-logger'
 import * as reducers from '../reducers/reducers'
 import Main from './Main'
 import { createDatabase } from '../utils/createDatabase'
+import { createRecord } from '../utils/createRecord'
+import data from '../api/mocked.json'
 
-createDatabase() //We create a database to store habits locally.
+createDatabase()
+createRecord(data)
 
 const logger = createLogger()
 
