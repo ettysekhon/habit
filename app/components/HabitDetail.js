@@ -12,11 +12,9 @@ export default class HabitDetail extends Component {
     const { habit } = this.props
     return (
     <View style={styles.container}>
-      <View style={styles.headerContainer}>
+      <View style={styles.contentContainer}>
         <Text style={styles.header}>{habit.nameLong}</Text>
-      </View>
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>{habit.description}</Text>
+        <Text style={styles.contentText}>{habit.description}</Text>
       </View>
       <View>
         {(habit.selected)

@@ -9,17 +9,17 @@ export default StyleSheet.create({
   rowContainer: {
     backgroundColor: 'rgb(0,150,136)',
     marginBottom: 1,
-    paddingTop: 8,
-    paddingBottom: 8,
+    paddingVertical: 8,
     paddingLeft: 16,
+    paddingRight: 8,
     height: 72
   },
   rowHeader: {
-    color: 'rgba(255,255,255,0.87)',
+    color: 'rgb(255,255,255)',
     fontSize: 16
   },
   rowText: {
-    color: 'rgba(255,255,255,0.54)',
+    color: 'rgba(255,255,255,0.70)',
     fontSize: 14
   }
 })

@@ -4,21 +4,18 @@ import PADDINGTOP from '../constants/paddingTop'
 
 export default StyleSheet.create({
   container: {
-    paddingTop: PADDINGTOP
-  },
-  headerContainer: {
-    paddingLeft: 16
+    paddingTop: PADDINGTOP,
+    paddingLeft: 16,
+    paddingRight: 8
   },
   header: {
-    color: 'rgba(255,255,255,0.87)',
-    fontSize: 16
+    color: 'rgb(255,255,255)',
+    fontSize: 16,
+    marginBottom: 8
   },
-  subheaderContainer: {
-    paddingVertical: 8,
-    paddingLeft: 16
-  },
-  subheader: {
-    color: 'rgba(255,255,255,0.54)',
-    fontSize: 14
+  contentText: {
+    color: 'rgba(255,255,255,0.70)',
+    fontSize: 14,
+    marginBottom: 16
   }
 })

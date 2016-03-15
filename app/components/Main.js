@@ -1,6 +1,7 @@
 import React, { Component, Navigator, PropTypes, View } from 'react-native'
 import HabitDetail from '../components/HabitDetail'
 import HabitList from '../components/HabitList'
+import { NavBarRouteMapper } from '../components/NavBarRouteMapper'
 import styles from './MainStyles'
 
 export default class Main extends Component {
@@ -20,8 +21,14 @@ export default class Main extends Component {
     return (
       <View style={styles.container}>
         <Navigator
-          initialRoute={{ id: 'habitlist' }}
+          ref="navigator"
+          initialRoute={{ id: 'habitlist', title: 'Habits' }}
           renderScene={this.renderScene}
+          navigationBar={
+            <Navigator.NavigationBar
+              style={styles.navigationBar}
+              routeMapper={NavBarRouteMapper}
+            />}
           configureScene={this.configureScene}
         />
       </View>
