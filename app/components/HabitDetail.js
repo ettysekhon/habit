@@ -8,7 +8,11 @@ export default class HabitDetail extends Component {
     habit: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
   };
-  render = () => {
+  constructor(props) {
+    super(props)
+    this.onBack = this.onBack.bind(this)
+  }
+  render() {
     const { habit } = this.props
     return (
     <View style={styles.container}>
@@ -42,6 +46,6 @@ export default class HabitDetail extends Component {
         </Button>
       </View>
     </View>
-  )};
-  onBack = () => this.props.nav.pop();
+  )}
+  onBack() { this.props.nav.pop() }
 }
