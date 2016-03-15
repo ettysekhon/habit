@@ -8,10 +8,10 @@ export default class SectionHeader extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.headerContainer}>
-          <Text style={styles.headerText}>{header}</Text>
+          <Text style={styles.header}>{header}</Text>
         </View>
         <View style={styles.subheaderContainer}>
-          <Text style={styles.subheaderText}>{subheader}</Text>
+          <Text style={styles.subheader}>{subheader}</Text>
         </View>
       </View>
     )

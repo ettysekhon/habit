@@ -11,7 +11,21 @@
 
 #import "RCTRootView.h"
 
+#import "CouchbaseLite/CouchbaseLite.h"
+#import "CouchbaseLiteListener/CBLListener.h"
+#import "CBLRegisterJSViewCompiler.h"
+
 @implementation AppDelegate
+
+- (void)launchCouchbaseLite
+{
+  NSLog(@"Launching Couchbase Lite...");
+  CBLManager* dbmgr = [CBLManager sharedInstance];
+  CBLRegisterJSViewCompiler();
+  CBLListener* listener = [[CBLListener alloc] initWithManager:dbmgr port:5800];
+  [listener start:nil];
+  NSLog(@"Couchbase Lite url = %@, and port %d", dbmgr.internalURL, listener.port);
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -51,6 +65,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  [self launchCouchbaseLite];
   return YES;
 }
 

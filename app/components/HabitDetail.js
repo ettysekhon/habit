@@ -1,5 +1,5 @@
 import React, { Component, PropTypes, Text, View } from 'react-native'
-import Button from './Button'
+import Button from '../components/Button'
 import styles from './HabitDetailStyles'
 
 export default class HabitDetail extends Component {
@@ -8,15 +8,15 @@ export default class HabitDetail extends Component {
     habit: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
   };
-  render = () => {
+  render() {
     const { habit } = this.props
     return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={styles.headerText}>{habit.nameLong}</Text>
+        <Text style={styles.header}>{habit.nameLong}</Text>
       </View>
-      <View style={styles.descriptionContainer}>
-        <Text style={styles.descriptionText}>{habit.description}</Text>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>{habit.description}</Text>
       </View>
       <View>
         {(habit.selected)
@@ -34,14 +34,6 @@ export default class HabitDetail extends Component {
           </Button>
         }
       </View>
-      <View>
-        <Button onPress={() => this.onBack}>
-          <View style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>BACK</Text>
-          </View>
-        </Button>
-      </View>
     </View>
-  )};
-  onBack = () => this.props.nav.pop();
+  )}
 }

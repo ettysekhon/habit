@@ -12,15 +12,15 @@ export default StyleSheet.create({
     paddingBottom: 8,
     paddingLeft: 16
   },
-  headerText: {
+  header: {
     color: 'rgba(255,255,255,0.87)',
     fontSize: 16
   },
-  descriptionContainer: {
+  textContainer: {
     paddingLeft: 16,
     flex: 1
   },
-  descriptionText: {
+  text: {
     color: 'rgba(255,255,255,0.54)',
     fontSize: 14
   },

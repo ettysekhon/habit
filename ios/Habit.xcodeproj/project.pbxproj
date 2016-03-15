@@ -24,6 +24,14 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		2AF974093DD74BB5AFCD9A3E /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF16F7F139C4FB4932B7F4F /* Foundation.ttf */; };
 		339B8EE192574022A562D38B /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DC3963465DF4406AA8D2BF8 /* Ionicons.ttf */; };
+		372825B91C97372B0008510F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 372825B81C9737290008510F /* libz.dylib */; };
+		372825BB1C9737360008510F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 372825BA1C9737340008510F /* libsqlite3.dylib */; };
+		37CF357C1C9706ED00BEA21E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CF357B1C9706ED00BEA21E /* CFNetwork.framework */; };
+		37CF357E1C97070300BEA21E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CF357D1C97070300BEA21E /* Security.framework */; };
+		37CF35801C97073400BEA21E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CF357F1C97073400BEA21E /* SystemConfiguration.framework */; };
+		37CF35871C9707D300BEA21E /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CF35851C9707D300BEA21E /* CouchbaseLite.framework */; };
+		37CF35881C9707D400BEA21E /* CouchbaseLiteListener.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CF35861C9707D300BEA21E /* CouchbaseLiteListener.framework */; };
+		37CF358B1C97081600BEA21E /* libCBLJSViewCompiler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CF358A1C97081600BEA21E /* libCBLJSViewCompiler.a */; };
 		5D32D57B016645CEAB30BDB2 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56D4B8BE86CD47D097979C45 /* MaterialIcons.ttf */; };
 		5EB6C634A85040409A8F65B9 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B0A4256509B419E9622FEBC /* Entypo.ttf */; };
 		620DC1D42EC7406896C3C4D8 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1583BFAB6FF48168DD46DEB /* Octicons.ttf */; };
@@ -142,6 +150,15 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		2AF16F7F139C4FB4932B7F4F /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		365231A48CBB4F6D881D4B37 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
+		372825B81C9737290008510F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		372825BA1C9737340008510F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		37CF357B1C9706ED00BEA21E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		37CF357D1C97070300BEA21E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		37CF357F1C97073400BEA21E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		37CF35851C9707D300BEA21E /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLite.framework; sourceTree = "<group>"; };
+		37CF35861C9707D300BEA21E /* CouchbaseLiteListener.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLiteListener.framework; sourceTree = "<group>"; };
+		37CF35891C97081600BEA21E /* CBLRegisterJSViewCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLRegisterJSViewCompiler.h; sourceTree = "<group>"; };
+		37CF358A1C97081600BEA21E /* libCBLJSViewCompiler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCBLJSViewCompiler.a; sourceTree = "<group>"; };
 		3DC3963465DF4406AA8D2BF8 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		4CFAAAE60DB44C1C98C12C56 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		56D4B8BE86CD47D097979C45 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
@@ -166,6 +183,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372825BB1C9737360008510F /* libsqlite3.dylib in Frameworks */,
+				372825B91C97372B0008510F /* libz.dylib in Frameworks */,
+				37CF35801C97073400BEA21E /* SystemConfiguration.framework in Frameworks */,
+				37CF357E1C97070300BEA21E /* Security.framework in Frameworks */,
+				37CF357C1C9706ED00BEA21E /* CFNetwork.framework in Frameworks */,
+				37CF35871C9707D300BEA21E /* CouchbaseLite.framework in Frameworks */,
+				37CF35881C9707D400BEA21E /* CouchbaseLiteListener.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -175,6 +199,7 @@
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
+				37CF358B1C97081600BEA21E /* libCBLJSViewCompiler.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				D17763604D764190B181669F /* libRNVectorIcons.a in Frameworks */,
 			);
@@ -278,6 +303,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		37CF356E1C9705AC00BEA21E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				372825BA1C9737340008510F /* libsqlite3.dylib */,
+				372825B81C9737290008510F /* libz.dylib */,
+				37CF35851C9707D300BEA21E /* CouchbaseLite.framework */,
+				37CF35861C9707D300BEA21E /* CouchbaseLiteListener.framework */,
+				37CF35891C97081600BEA21E /* CBLRegisterJSViewCompiler.h */,
+				37CF358A1C97081600BEA21E /* libCBLJSViewCompiler.a */,
+				37CF357F1C97073400BEA21E /* SystemConfiguration.framework */,
+				37CF357D1C97070300BEA21E /* Security.framework */,
+				37CF357B1C9706ED00BEA21E /* CFNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		37E631491C94C1540029CDC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +364,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				37CF356E1C9705AC00BEA21E /* Frameworks */,
 				13B07FAE1A68108700A75B9A /* Habit */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* HabitTests */,
@@ -693,6 +735,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEAD_CODE_STRIPPING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -702,6 +748,10 @@
 				INFOPLIST_FILE = Habit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Habit;
@@ -712,6 +762,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -721,6 +775,10 @@
 				INFOPLIST_FILE = Habit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Habit;
