@@ -22,7 +22,7 @@ export default class Main extends Component {
       <View style={styles.container}>
         <Navigator
           ref="navigator"
-          initialRoute={{ id: 'habitlist', title: 'Habits' }}
+          initialRoute={{ id: 'habitlist', title: 'Habits', index: 0 }}
           renderScene={this.renderScene}
           navigationBar={this.renderNavBar()}
           configureScene={this.configureScene}
