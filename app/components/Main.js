@@ -32,11 +32,11 @@ export default class Main extends Component {
   }
   renderScene(route, nav) {
     const { state, actions } = this.props
-
-    if (route.id === 'habitdetail') {
-      return (<HabitDetail nav={nav} habit={state.habit.selected} actions={actions} />)
-    } else {
-      return (<HabitList nav={nav} habits={state.habit.all} actions={actions} />)
+    switch (route.id) {
+      case 'habitlist':
+        return (<HabitList nav={nav} habits={state.habit.all} actions={actions} />)
+      case 'habitdetail':
+        return (<HabitDetail nav={nav} habit={state.habit.selected} actions={actions} />)
     }
   }
   renderNavBar() {
