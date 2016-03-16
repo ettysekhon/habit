@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import styles from './NavBarRouteMapperStyles'
 
 export const NavBarRouteMapper = {
-  LeftButton: function (route, navigator, index, navState) {
+  LeftButton: (route, navigator, index, navState) => {
     if (index === 0) { return null }
     return (
       <TouchableOpacity onPress={() => navigator.pop()}>
@@ -11,16 +11,16 @@ export const NavBarRouteMapper = {
       </TouchableOpacity>
     )
   },
-  RightButton: function (route, navigator, index, navState) {
-    // return null
-    if (route.id === 'habitlist') { return null }
-    return (
-      <TouchableOpacity onPress={() => navigator.push({ id: 'habitlist', title: 'Habits' })}>
-        <Icon name="home" style={[ styles.rightButton, styles.buttonText ]} />
-      </TouchableOpacity>
-    )
+  RightButton: (route, navigator, index, navState) => {
+    return null
+    // if (index === 0) { return null }
+    // return (
+    //   <TouchableOpacity onPress={() => navigator.push({ id: 'habitlist', title: 'Habits' })}>
+    //     <Icon name="home" style={[ styles.rightButton, styles.buttonText ]} />
+    //   </TouchableOpacity>
+    // )
   },
-  Title: function (route) {
+  Title: (route) => {
     return <Text style={styles.title}>{route.title}</Text>
   }
 }
