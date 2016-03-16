@@ -1,4 +1,4 @@
-import SERVER from '../constants/server'
+import SERVERURL from '../constants/serverUrl'
 
 const HEADERS = {
   'Cache-Control': 'no-cache',
@@ -9,7 +9,7 @@ const HEADERS = {
 }
 
 export const login = (email, password) => {
-  return fetch(`${SERVER}/login/email`, {
+  return fetch(`${SERVERURL}/login/email`, {
     method: 'POST',
     headers: HEADERS,
     body: JSON.stringify({

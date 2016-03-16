@@ -1,12 +1,11 @@
 import DATABASEURL from '../constants/databaseUrl'
 
-export const createDocument = data => {
-  return fetch(DATABASEURL, {
-    method: 'POST',
+export const readDatabase = () => {
+  return fetch(`${DATABASEURL}/_all_docs`, {
+    method: 'GET',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
+    }
   })
 }

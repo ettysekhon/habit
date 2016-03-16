@@ -1,11 +1,12 @@
-const dbURL = 'http://127.0.0.1:5800/habit'
+import DATABASEURL from '../constants/databaseUrl'
 
 export const createDatabase = () => {
-  fetch(dbURL).then(response => {
+  fetch(DATABASEURL).then(response => {
     if (response.status !== 200) {
-      return fetch(dbURL, { method: 'PUT' })
-      .then(response => response.json()).then(data => { return data })
-      .catch(e => e)
+      return fetch(DATABASEURL, { method: 'PUT' })
+        .then(response => response.json())
+        .then(data => data)
+        .catch(e => e)
     }
   }).catch(e => e)
 }
