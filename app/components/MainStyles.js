@@ -7,7 +7,7 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'column'
   },
-  navigationBar: {
+  navBar: {
     backgroundColor: 'rgb(0,105,92)'
   }
 })
