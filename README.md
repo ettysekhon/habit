@@ -9,9 +9,9 @@
 
 ### Installation
 *  git clone https://github.com/urbanvikingr/habit.git
-*  cd app
+*  cd habit
 *  run `npm install`
 
 ### To run the iOS app
-* cd app
+* cd habit
 * Open `ios/Habit.xcodeproj` and hit run in Xcode
