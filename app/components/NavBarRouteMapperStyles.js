@@ -8,9 +8,9 @@ export default StyleSheet.create({
   },
   buttonText: {
     color: 'rgb(255,255,255)',
-    fontSize: 16
+    fontSize: 24
   },
   leftButton: {
-    paddingLeft: 16
+    paddingLeft: 8
   }
 })
