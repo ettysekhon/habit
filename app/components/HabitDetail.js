@@ -4,7 +4,7 @@ import styles from './HabitDetailStyles'
 
 export default class HabitDetail extends Component {
   static propTypes = {
-    nav: PropTypes.object.isRequired,
+    navigator: PropTypes.object.isRequired,
     habit: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
   };
@@ -19,13 +19,18 @@ export default class HabitDetail extends Component {
       <View>
         {(habit.selected)
           ?
-          <Button onPress={() => this.props.actions.unselectHabit(habit)}>
+          <Button onPress={() => {
+            this.props.actions.unselectHabit(habit)
+          }}>
             <View style={styles.buttonContainer}>
               <Text style={[ styles.buttonText, styles.unselect ]}>UNSELECT</Text>
             </View>
           </Button>
           :
-          <Button onPress={() => this.props.actions.selectHabit(habit)}>
+          <Button onPress={() => {
+            this.props.actions.selectHabit(habit)
+            this.props.navigator.pop()
+          }}>
             <View style={[ styles.buttonContainer, styles.select ]}>
               <Text style={styles.buttonText}>SELECT</Text>
             </View>

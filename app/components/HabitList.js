@@ -4,7 +4,7 @@ import styles from './HabitListStyles'
 
 export default class HabitList extends Component {
   static propTypes = {
-    nav: PropTypes.object.isRequired,
+    navigator: PropTypes.object.isRequired,
     habits: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
   };
@@ -35,6 +35,6 @@ export default class HabitList extends Component {
   };
   pressRow = (rowData: {}) => {
     this.props.actions.selectHabit(rowData)
-    this.props.nav.push({ id: 'habitdetail', title: rowData.name })
+    this.props.navigator.push({ id: 'habitdetail', title: rowData.name })
   };
 }
