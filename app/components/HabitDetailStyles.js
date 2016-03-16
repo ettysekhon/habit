@@ -10,12 +10,14 @@ export default StyleSheet.create({
     flexDirection: 'column'
   },
   contentContainer: {
-    paddingHorizontal: 16,
+    paddingLeft: 16,
+    paddingRight: 8,
     flex: 1
   },
   header: {
-    color: 'rgba(0,0,0,0.87)',
+    color: 'rgba(0,105,92,0.87)',
     fontSize: 16,
+    fontWeight: '500',
     marginTop: 24,
     marginBottom: 16
   },
