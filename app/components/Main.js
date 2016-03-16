@@ -21,9 +21,10 @@ export default class Main extends Component {
     return (
       <View style={styles.container}>
         <Navigator
+          ref="navigator"
           initialRoute={{ id: 'habitlist', title: 'Habits' }}
           renderScene={this.renderScene}
-          navigationBar={this.renderNavigationBar()}
+          navigationBar={this.renderNavBar()}
           configureScene={this.configureScene}
         />
       </View>
@@ -38,13 +39,8 @@ export default class Main extends Component {
       return (<HabitList nav={nav} habits={state.habit.all} actions={actions} />)
     }
   }
-  renderNavigationBar() {
-    return (
-      <Navigator.NavigationBar
-        style={styles.navigationBar}
-        routeMapper={NavBarRouteMapper}
-      />
-    )
+  renderNavBar() {
+    return (<Navigator.NavigationBar routeMapper={NavBarRouteMapper} style={styles.navBar} />)
   }
   configureScene() {
     return Navigator.SceneConfigs.FloatFromRight
