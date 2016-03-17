@@ -4,6 +4,20 @@ import styles from './NavBarRouteMapperStyles'
 
 export const NavBarRouteMapper = {
   LeftButton: (route, navigator, index) => {
+    switch (route.id) {
+      case 'dashboard':
+        return (
+          <TouchableOpacity onPress={() => navigator.push({ id: 'habitlist', title: 'Habits' })}>
+            <Icon name="all-inclusive" style={[ styles.leftButton, styles.buttonText ]} />
+          </TouchableOpacity>
+        )
+      case 'habitlist':
+        return (
+          <TouchableOpacity onPress={() => navigator.push({ id: 'dashboard', title: 'Dashboard' })}>
+            <Icon name="dashboard" style={[ styles.leftButton, styles.buttonText ]} />
+          </TouchableOpacity>
+        )
+    }
     if (index === 0) { return null }
     return (
       <TouchableOpacity onPress={() => navigator.pop()}>
@@ -11,6 +25,6 @@ export const NavBarRouteMapper = {
       </TouchableOpacity>
     )
   },
-  RightButton: () => null,
+  RightButton: () => { return null },
   Title: (route) => <Text style={styles.title}>{route.title}</Text>
 }

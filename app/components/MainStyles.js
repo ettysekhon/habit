@@ -3,11 +3,8 @@ const { StyleSheet } = React
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: 'rgb(0,105,92)',
+    backgroundColor: 'rgb(0,0,0)',
     flex: 1,
     flexDirection: 'column'
-  },
-  navBar: {
-    backgroundColor: 'rgb(0,105,92)'
   }
 })

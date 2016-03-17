@@ -12,8 +12,5 @@ export default StyleSheet.create({
   },
   leftButton: {
     paddingLeft: 8
-  },
-  rightButton: {
-    paddingRight: 8
   }
 })

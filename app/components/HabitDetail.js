@@ -5,20 +5,20 @@ import styles from './HabitDetailStyles'
 export default class HabitDetail extends Component {
   static propTypes = {
     navigator: PropTypes.object.isRequired,
-    habit: PropTypes.object.isRequired,
+    data: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
   };
   render() {
-    const { habit } = this.props
+    const { data } = this.props
     return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-        <Text style={styles.contentHeader}>{habit.summary}</Text>
-        <Text style={styles.contentText}>{habit.description}</Text>
+        <Text style={styles.contentHeader}>{data.summary}</Text>
+        <Text style={styles.contentText}>{data.description}</Text>
       </View>
       <View>
         <Button onPress={() => {
-          this.props.actions.selectHabit(habit)
+          this.props.actions.selectHabit(data)
           this.props.navigator.pop()
         }}>
           <View style={styles.buttonContainer}>
