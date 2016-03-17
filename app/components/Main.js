@@ -14,7 +14,6 @@ export default class Main extends Component {
     this.renderScene = this.renderScene.bind(this)
   }
   componentDidMount() {
-    this.props.actions.login()
     this.props.actions.getAvailableHabits()
     // this.props.actions.getSelectedHabits()
   }

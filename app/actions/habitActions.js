@@ -1,19 +1,16 @@
 import * as actionTypes from '../constants/actionTypes'
-import * as api from '../api/habitApi'
 import { makeAction } from '../utils/makeAction'
 import { createDocument } from '../utils/createDocument'
 import { deleteDocument } from '../utils/deleteDocument'
 import { readDatabase } from '../utils/readDatabase'
+import AVAILABLEHABITS from '../api/availableHabits.json'
 
 const getAvailableHabitsSuccess = makeAction(actionTypes.HABIT_GET_AVAIL_SUCCESS, 'response')
 const errorMessage = makeAction(actionTypes.ERROR_MESSAGE, 'error')
 
 export const getAvailableHabits = () => {
   return dispatch => {
-    return api.getAll()
-    .then(response => response.json())
-    .then(json => dispatch(getAvailableHabitsSuccess(json)))
-    .catch(error => dispatch(errorMessage(error)))
+    dispatch(getAvailableHabitsSuccess(AVAILABLEHABITS))
   }
 }
 

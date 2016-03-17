@@ -27,13 +27,13 @@ export default class HabitList extends Component {
     return (
       <TouchableHighlight key={`${sectionId}${rowId}`} onPress={() => this.pressRow(rowData)}>
         <View style={styles.rowContainer}>
-          <Text style={styles.rowHeader}>{rowData.name}</Text>
-          <Text style={styles.rowText}>{rowData.nameLong}</Text>
+          <Text style={styles.rowHeader}>{rowData.title}</Text>
+          <Text style={styles.rowText}>{rowData.summary}</Text>
         </View>
       </TouchableHighlight>
     )
   };
   pressRow = (rowData: {}) => {
-    this.props.navigator.push({ id: 'habitdetail', title: rowData.name, data: rowData })
+    this.props.navigator.push({ id: 'habitdetail', title: rowData.title, data: rowData })
   };
 }
