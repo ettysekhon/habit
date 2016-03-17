@@ -14,8 +14,7 @@ export default class Main extends Component {
     this.renderScene = this.renderScene.bind(this)
   }
   componentDidMount() {
-    this.props.actions.login()
-    this.props.actions.getAvailableHabits()
+    this.props.actions.getHabits()
     // this.props.actions.getSelectedHabits()
   }
   render() {
@@ -36,7 +35,7 @@ export default class Main extends Component {
     switch (route.id) {
       case 'habitlist':
         return (
-          <HabitList navigator={navigator} habits={state.habit.available} actions={actions} />
+          <HabitList navigator={navigator} habits={state.habit} actions={actions} />
         )
       case 'habitdetail':
         return (

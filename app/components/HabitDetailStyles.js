@@ -14,7 +14,7 @@ export default StyleSheet.create({
     paddingRight: 8,
     flex: 1
   },
-  header: {
+  contentHeader: {
     color: 'rgba(0,105,92,0.87)',
     fontSize: 16,
     fontWeight: '500',

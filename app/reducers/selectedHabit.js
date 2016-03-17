@@ -2,9 +2,9 @@ import * as actionTypes from '../constants/actionTypes'
 
 const initialState = {}
 
-export default function habit(state = initialState, action = {}) {
+export default function selectedHabit(state = initialState, action = {}) {
   switch (action.type) {
-    case actionTypes.HABIT_GET_SUCCESS:
+    case actionTypes.HABIT_GET_SELECTED_SUCCESS:
       return {
         ...action.response.data
       }

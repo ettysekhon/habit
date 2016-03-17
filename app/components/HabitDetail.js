@@ -13,7 +13,7 @@ export default class HabitDetail extends Component {
     return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-        <Text style={styles.header}>{habit.nameLong}</Text>
+        <Text style={styles.contentHeader}>{habit.summary}</Text>
         <Text style={styles.contentText}>{habit.description}</Text>
       </View>
       <View>

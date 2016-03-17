@@ -6,7 +6,7 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'column'
   },
-  rowContainer: {
+  rowContentContainer: {
     backgroundColor: 'rgb(0,150,136)',
     marginBottom: 1,
     paddingVertical: 8,
@@ -14,11 +14,11 @@ export default StyleSheet.create({
     paddingRight: 8,
     height: 72
   },
-  rowHeader: {
+  rowContentHeader: {
     color: 'rgb(255,255,255)',
     fontSize: 16
   },
-  rowText: {
+  rowContentText: {
     color: 'rgba(255,255,255,0.70)',
     fontSize: 14
   }
