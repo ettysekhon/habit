@@ -15,7 +15,8 @@ export default class Main extends Component {
   }
   componentDidMount() {
     this.props.actions.login()
-    this.props.actions.getHabits()
+    this.props.actions.getAvailableHabits()
+    // this.props.actions.getSelectedHabits()
   }
   render() {
     return (
@@ -30,17 +31,23 @@ export default class Main extends Component {
       </View>
     )
   }
-  renderScene(route, nav) {
+  renderScene(route, navigator) {
     const { state, actions } = this.props
     switch (route.id) {
       case 'habitlist':
-        return (<HabitList nav={nav} habits={state.habit.all} actions={actions} />)
+        return (
+          <HabitList navigator={navigator} habits={state.habit.available} actions={actions} />
+        )
       case 'habitdetail':
-        return (<HabitDetail nav={nav} habit={state.habit.selected} actions={actions} />)
+        return (
+          <HabitDetail navigator={navigator} habit={route.data} actions={actions} />
+        )
     }
   }
   renderNavBar() {
-    return (<Navigator.NavigationBar routeMapper={NavBarRouteMapper} style={styles.navBar} />)
+    return (
+      <Navigator.NavigationBar routeMapper={NavBarRouteMapper} style={styles.navBar} />
+    )
   }
   configureScene() {
     return Navigator.SceneConfigs.FloatFromRight
