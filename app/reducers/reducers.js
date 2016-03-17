@@ -1,7 +1,7 @@
-import auth from './auth'
 import habit from './habit'
+import selectedHabit from './selectedHabit'
 
 export {
-  auth,
-  habit
+  habit,
+  selectedHabit
 }
