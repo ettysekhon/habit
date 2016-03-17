@@ -3,12 +3,12 @@ const { StyleSheet } = React
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: 'rgb(21,101,192)',
+    backgroundColor: 'rgb(0,105,92)',
     flex: 1,
     flexDirection: 'column'
   },
   rowContentContainer: {
-    backgroundColor: 'rgb(33,150,243)',
+    backgroundColor: 'rgb(0,150,136)',
     marginBottom: 1,
     paddingVertical: 8,
     paddingLeft: 16,
