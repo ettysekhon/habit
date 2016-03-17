@@ -26,6 +26,7 @@ export default StyleSheet.create({
     fontSize: 14
   },
   buttonContainer: {
+    backgroundColor: 'rgb(0,150,136)',
     height: 72,
     flex: 1,
     alignItems: 'center',
@@ -34,11 +35,5 @@ export default StyleSheet.create({
   buttonText: {
     color: 'rgb(255,255,255)',
     fontSize: 16
-  },
-  select: {
-    backgroundColor: 'rgb(0,150,136)'
-  },
-  unselect: {
-    backgroundColor: 'rgb(244,67,54)'
   }
 })

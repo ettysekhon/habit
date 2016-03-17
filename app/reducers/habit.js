@@ -1,23 +1,17 @@
 import * as actionTypes from '../constants/actionTypes'
 
-const initialState = { all: {}, started: {} }
+const initialState = { available: {}, selected: {} }
 
 export default function habit(state = initialState, action = {}) {
   switch (action.type) {
-    case actionTypes.HABIT_GETALL_SUCCESS:
+    case actionTypes.HABIT_GET_AVAIL_SUCCESS:
       return {
-        all: { ...action.response.data },
-        selected: {}
+        available: { ...action.response.data }
       }
-    case actionTypes.HABIT_SELECT:
+    case actionTypes.HABIT_GET_SELECTED_SUCCESS:
       return {
         ...state,
-        selected: { ...action.selected }
-      }
-    case actionTypes.HABIT_UNSELECT:
-      return {
-        ...state,
-        selected: {}
+        selected: { ...action.response }
       }
     default:
       return state

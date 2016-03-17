@@ -17,25 +17,14 @@ export default class HabitDetail extends Component {
         <Text style={styles.contentText}>{habit.description}</Text>
       </View>
       <View>
-        {(habit.selected)
-          ?
-          <Button onPress={() => {
-            this.props.actions.unselectHabit(habit)
-          }}>
-            <View style={styles.buttonContainer}>
-              <Text style={[ styles.buttonText, styles.unselect ]}>UNSELECT</Text>
-            </View>
-          </Button>
-          :
-          <Button onPress={() => {
-            this.props.actions.selectHabit(habit)
-            this.props.navigator.pop()
-          }}>
-            <View style={[ styles.buttonContainer, styles.select ]}>
-              <Text style={styles.buttonText}>SELECT</Text>
-            </View>
-          </Button>
-        }
+        <Button onPress={() => {
+          this.props.actions.selectHabit(habit)
+          this.props.navigator.pop()
+        }}>
+          <View style={styles.buttonContainer}>
+            <Text style={styles.buttonText}>SELECT</Text>
+          </View>
+        </Button>
       </View>
     </View>
   )}

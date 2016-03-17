@@ -2,49 +2,47 @@ import * as actionTypes from '../constants/actionTypes'
 import * as api from '../api/habitApi'
 import { makeAction } from '../utils/makeAction'
 import { createDocument } from '../utils/createDocument'
+import { deleteDocument } from '../utils/deleteDocument'
+import { readDatabase } from '../utils/readDatabase'
 
-const getHabitsSuccess = makeAction(actionTypes.HABIT_GETALL_SUCCESS, 'response')
-const getHabitsError = makeAction(actionTypes.HABIT_GETALL_ERROR, 'error')
+const getAvailableHabitsSuccess = makeAction(actionTypes.HABIT_GET_AVAIL_SUCCESS, 'response')
+const habitError = makeAction(actionTypes.HABIT_ERROR, 'error')
 
-export const getHabits = () => {
+export const getAvailableHabits = () => {
   return dispatch => {
     return api.getAll()
     .then(response => response.json())
-    .then(json => dispatch(getHabitsSuccess(json)))
-    .catch(error => dispatch(getHabitsError(error)))
+    .then(json => dispatch(getAvailableHabitsSuccess(json)))
+    .catch(error => dispatch(habitError(error)))
   }
 }
 
-const getSelectedHabitsSuccess = makeAction(actionTypes.HABIT_GETSELECTED_SUCCESS, 'response')
-const getSelectedHabitsError = makeAction(actionTypes.HABIT_GETSELECTED_ERROR, 'error')
+const getSelectedHabitsSuccess = makeAction(actionTypes.HABIT_GET_SELECTED_SUCCESS, 'response')
 
 export const getSelectedHabits = () => {
   return dispatch => {
-    return api.getAll()
-    .then(response => response.json())
-    .then(json => dispatch(getSelectedHabitsSuccess(json)))
-    .catch(error => dispatch(getSelectedHabitsError(error)))
+    return readDatabase()
+    .then(response => dispatch(getSelectedHabitsSuccess(response)))
+    .catch(error => dispatch(habitError(error)))
   }
 }
 
 const selectHabitSuccess = makeAction(actionTypes.HABIT_SELECT_SUCCESS, 'response')
-const selectHabitError = makeAction(actionTypes.HABIT_SELECT_ERROR, 'error')
 
 export const selectHabit = (habit) => {
   return (dispatch) => {
     return createDocument(habit)
     .then(response => dispatch(selectHabitSuccess(response)))
-    .catch(error => dispatch(selectHabitError(error)))
+    .catch(error => dispatch(habitError(error)))
   }
 }
 
-const unselectHabitSuccess = makeAction(actionTypes.HABIT_UNSELECT_SUCCESS, 'response')
-const unselectHabitError = makeAction(actionTypes.HABIT_UNSELECT_ERROR, 'error')
+const deselectHabitSuccess = makeAction(actionTypes.HABIT_DESELECT_SUCCESS, 'response')
 
-export const unselectHabit = (habit) => {
+export const deselectHabit = (habit) => {
   return (dispatch) => {
-    return createDocument(habit)
-    .then(response => dispatch(unselectHabitSuccess(response)))
-    .catch(error => dispatch(unselectHabitError(error)))
+    return deleteDocument(habit)
+    .then(response => dispatch(deselectHabitSuccess(response)))
+    .catch(error => dispatch(habitError(error)))
   }
 }
