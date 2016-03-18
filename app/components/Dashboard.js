@@ -1,8 +1,8 @@
 import React, { Component, ListView, PropTypes, Text, TouchableHighlight, View } from 'react-native'
 import ListHeader from '../components/ListHeader'
-import styles from './HabitListStyles'
+import styles from './DashboardStyles'
 
-export default class HabitList extends Component {
+export default class Dashboard extends Component {
   static propTypes = {
     navigator: PropTypes.object.isRequired,
     data: PropTypes.object.isRequired,
@@ -10,8 +10,8 @@ export default class HabitList extends Component {
   };
   render = () => {
     const ds = new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 })
-    const dataSource = ds.cloneWithRows(this.props.data.items || [])
-    const content = this.props.data.summary || ''
+    const dataSource = ds.cloneWithRows(this.props.data || [])
+    const content = 'Insert compliance'
     return (
       <View style={styles.container}>
         <ListHeader content={content} />

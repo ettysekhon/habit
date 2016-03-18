@@ -6,8 +6,5 @@ export default StyleSheet.create({
     backgroundColor: 'rgb(0,105,92)',
     flex: 1,
     flexDirection: 'column'
-  },
-  navBar: {
-    backgroundColor: 'rgb(0,105,92)'
   }
 })

@@ -4,12 +4,12 @@ import PADDINGTOP from '../constants/paddingTop'
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: 'rgb(255,255,255)',
     paddingTop: PADDINGTOP,
     flex: 1,
     flexDirection: 'column'
   },
   contentContainer: {
+    backgroundColor: 'rgb(255,255,255)',
     paddingLeft: 16,
     paddingRight: 8,
     flex: 1
@@ -34,6 +34,7 @@ export default StyleSheet.create({
   },
   buttonText: {
     color: 'rgb(255,255,255)',
-    fontSize: 16
+    fontSize: 16,
+    fontWeight: '500'
   }
 })
