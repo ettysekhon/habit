@@ -10,9 +10,7 @@ const errorMessage = makeAction('ERROR_MESSAGE', 'error')
 export const getUser = () => {
   return dispatch => {
     return readDatabase(databaseUrl)
-    .then(response => {
-      dispatch({ type: 'GET_USER', user: response })
-    })
+    .then(response => dispatch({ type: 'GET_USER', user: response }))
     .catch(error => dispatch(errorMessage(error)))
   }
 }

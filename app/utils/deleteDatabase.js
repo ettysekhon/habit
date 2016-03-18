@@ -1,6 +1,4 @@
-import databaseUrl from '../constants/databaseUrl'
-
-export const deleteDatabase = () => {
+export const deleteDatabase = (databaseUrl) => {
   return fetch(databaseUrl, {
     method: 'DELETE'
   })
