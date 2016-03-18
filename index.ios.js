@@ -1,5 +1,5 @@
 import React from 'react-native'
-import Habit from './app/containers/Habit'
+import App from './app/containers/App'
 const { AppRegistry } = React
 
-AppRegistry.registerComponent('Habit', () => Habit)
+AppRegistry.registerComponent('Habit', () => App)

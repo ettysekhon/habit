@@ -9,6 +9,7 @@ export default class Dashboard extends Component {
     actions: PropTypes.object.isRequired
   };
   render = () => {
+    console.log(this.props.data)
     const ds = new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 })
     const dataSource = ds.cloneWithRows(this.props.data || [])
     const content = 'Insert compliance'

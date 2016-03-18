@@ -1,9 +1,7 @@
-import DATABASEURL from '../constants/databaseUrl'
-
-export const createDatabase = () => {
-  fetch(DATABASEURL).then(response => {
+export const createDatabase = (databaseUrl) => {
+  fetch(databaseUrl).then(response => {
     if (response.status !== 200) {
-      return fetch(DATABASEURL, { method: 'PUT' })
+      return fetch(databaseUrl, { method: 'PUT' })
         .then(response => response.json())
         .then(data => data)
         .catch(e => e)
