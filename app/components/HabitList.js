@@ -10,8 +10,8 @@ export default class HabitList extends Component {
   };
   render = () => {
     const ds = new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 })
-    const dataSource = ds.cloneWithRows(this.props.data || [])
-    const content = 'Good habits are the key to long term success regardless what your goal is. Pick one of the habits below to do daily for the next two weeks. Start with something you’re certain you can do and build on it.'
+    const dataSource = ds.cloneWithRows(this.props.data.items || [])
+    const content = this.props.data.summary || ''
     return (
       <View style={styles.container}>
         <ListHeader content={content} />
