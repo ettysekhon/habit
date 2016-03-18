@@ -11,9 +11,8 @@ export const getUser = () => {
   return dispatch => {
     return readAllDocuments(databaseUrl, headers)
     .then(response => response.json())
-    .then(data => {
-      const user = data.rows.map(row => (row.doc))
-      console.log('user', user)
+    .then(json => {
+      const user = json.rows.map(row => (row.doc))
       dispatch({ type: 'GET_USER', user })
     })
     .catch(error => dispatch(errorMessage(error)))
@@ -21,18 +20,23 @@ export const getUser = () => {
 }
 
 export const selectHabit = (habit) => {
-  console.log('habit', habit)
-  habit = { hello: 'world' }
   return (dispatch) => {
     return createDocument(databaseUrl, headers, habit)
-    .then(() => dispatch(getUser()))
-    .catch(error => dispatch(errorMessage(error)))
+    .then(response => response.json())
+    .then(json => {
+      console.log('response', json)
+      dispatch(getUser())
+    })
+    .catch(error => {
+      console.log('error', error)
+      dispatch(errorMessage(error))
+    })
   }
 }
 
-export const deselectHabit = (habit) => {
+export const deselectHabit = (id) => {
   return (dispatch) => {
-    return deleteDocument(databaseUrl, headers, habit)
+    return deleteDocument(databaseUrl, headers, id)
     .then(() => dispatch(getUser()))
     .catch(error => dispatch(errorMessage(error)))
   }
