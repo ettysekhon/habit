@@ -34,7 +34,7 @@ export default class Main extends Component {
     const { state, actions } = this.props
     switch (route.id) {
       case 'dashboard':
-        return (<Dashboard navigator={navigator} data={state.selectedHabit} actions={actions} />)
+        return (<Dashboard navigator={navigator} data={state.user} actions={actions} />)
       case 'habitlist':
         return (<HabitList navigator={navigator} data={state.habit} actions={actions} />)
       case 'habitdetail':

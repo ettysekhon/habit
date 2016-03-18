@@ -1,7 +1,7 @@
 import habit from './habit'
-import selectedHabit from './selectedHabit'
+import user from './user'
 
 export {
   habit,
-  selectedHabit
+  user
 }

@@ -1,13 +1,7 @@
-import DATABASEURL from '../constants/databaseUrl'
-
-export const createDocument = data => {
-  console.log('createDocument', data)
-  return fetch(DATABASEURL, {
+export const createDocument = (databaseUrl, headers, data) => {
+  return fetch(databaseUrl, {
     method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
+    headers,
     body: JSON.stringify(data)
   })
 }
