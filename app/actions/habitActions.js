@@ -3,9 +3,6 @@ import habit from '../data/habit.json'
 
 export const getHabits = () => {
   return dispatch => {
-    dispatch({
-      type: actionTypes.HABIT_GET_SUCCESS,
-      habit
-    })
+    dispatch({ type: actionTypes.HABIT_GET_ALL, habit })
   }
 }
