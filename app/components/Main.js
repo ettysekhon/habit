@@ -33,7 +33,6 @@ export default class Main extends Component {
   }
   renderScene(route, navigator) {
     const { state, actions } = this.props
-    console.log('state', state)
     switch (route.id) {
       case 'dashboard':
         return (<Dashboard navigator={navigator} data={state.user} actions={actions} />)
