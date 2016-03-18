@@ -2,15 +2,18 @@ import React from 'react-native'
 const { StyleSheet } = React
 
 export default StyleSheet.create({
-  title: {
+  navBarTitle: {
     color: 'rgb(255,255,255)',
     fontSize: 24
   },
-  buttonText: {
-    color: 'rgb(255,255,255)',
+  navBarButtonIcon: {
     fontSize: 24
   },
-  leftButton: {
+  navBarButtonText: {
+    fontSize: 14
+  },
+  navBarLeftButton: {
+    color: 'rgb(255,255,255)',
     paddingLeft: 8
   }
 })

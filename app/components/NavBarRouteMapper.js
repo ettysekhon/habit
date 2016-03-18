@@ -3,28 +3,27 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import styles from './NavBarRouteMapperStyles'
 
 export const NavBarRouteMapper = {
-  LeftButton: (route, navigator, index) => {
-    switch (route.id) {
-      case 'dashboard':
-        return (
-          <TouchableOpacity onPress={() => navigator.push({ id: 'habitlist', title: 'Habits' })}>
-            <Icon name="all-inclusive" style={[ styles.leftButton, styles.buttonText ]} />
-          </TouchableOpacity>
-        )
-      case 'habitlist':
-        return (
-          <TouchableOpacity onPress={() => navigator.push({ id: 'dashboard', title: 'Dashboard' })}>
-            <Icon name="dashboard" style={[ styles.leftButton, styles.buttonText ]} />
-          </TouchableOpacity>
-        )
+  LeftButton: (route, navigator, index, navState) => {
+    if (index === 0) {
+      return (
+        <TouchableOpacity onPress={() => navigator.push({ id: 'dashboard', title: 'My Habits' })}>
+          <Text style={[ styles.navBarLeftButton, styles.navBarButtonText ]}>
+            <Icon name="chevron-left" style={styles.navBarButtonIcon} />
+            My Habits
+          </Text>
+        </TouchableOpacity>
+      )
     }
-    if (index === 0) { return null }
+    const previousRoute = navState.routeStack[index - 1]
     return (
       <TouchableOpacity onPress={() => navigator.pop()}>
-        <Icon name="chevron-left" style={[ styles.leftButton, styles.buttonText ]} />
+        <Text style={[ styles.navBarLeftButton, styles.navBarButtonText ]}>
+          <Icon name="chevron-left" style={styles.navBarButtonIcon} />
+          {previousRoute.title}
+        </Text>
       </TouchableOpacity>
     )
   },
   RightButton: () => { return null },
-  Title: (route) => <Text style={styles.title}>{route.title}</Text>
+  Title: (route) => <Text style={styles.navBarTitle}>{route.title}</Text>
 }

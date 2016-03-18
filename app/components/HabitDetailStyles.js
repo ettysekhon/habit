@@ -4,7 +4,6 @@ import PADDINGTOP from '../constants/paddingTop'
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: 'rgb(0,105,92)',
     paddingTop: PADDINGTOP,
     flex: 1,
     flexDirection: 'column'
