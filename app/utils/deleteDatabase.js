@@ -1,5 +1,5 @@
-export const deleteDatabase = (databaseUrl) => {
-  return fetch(databaseUrl, {
+export const deleteDb = (dbUrl) => {
+  return fetch(dbUrl, {
     method: 'DELETE'
   })
 }

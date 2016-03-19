@@ -1,43 +1,46 @@
 import { makeAction } from '../utils/makeAction'
-import { createDocument } from '../utils/createDocument'
-import { readAllDocuments } from '../utils/readAllDocuments'
-import { deleteDocument } from '../utils/deleteDocument'
-import databaseUrl from '../constants/databaseUrl'
+import { createDoc } from '../utils/createDoc'
+import { readAllDoc } from '../utils/readAllDoc'
+import { deleteDoc } from '../utils/deleteDoc'
+import dbUrl from '../constants/dbUrl'
 import headers from '../constants/headers'
 
-const errorMessage = makeAction('ERROR_MESSAGE', 'error')
+const errorMsg = makeAction('ERROR', 'error')
 
 export const getUser = () => {
   return dispatch => {
-    return readAllDocuments(databaseUrl, headers)
-    .then(response => response.json())
-    .then(json => {
-      const user = json.rows.map(row => (row.doc))
-      dispatch({ type: 'GET_USER', user })
-    })
-    .catch(error => dispatch(errorMessage(error)))
+    return readAllDoc(dbUrl, headers).then(res => res.json()).then(docs => {
+      if (docs.rows) {
+        const user = docs.rows.map(row => (row.doc))
+        dispatch({ type: 'GET_USER', user })
+      }
+      if (docs.status) {
+        dispatch(errorMsg(docs.status))
+      }
+    }).catch(err => err)
   }
 }
 
-export const selectHabit = (habit) => {
-  return (dispatch) => {
-    return createDocument(databaseUrl, headers, habit)
-    .then(response => response.json())
-    .then(json => {
-      console.log('response', json)
-      dispatch(getUser())
-    })
-    .catch(error => {
-      console.log('error', error)
-      dispatch(errorMessage(error))
-    })
+export const selectHabit = habit => {
+  return dispatch => {
+    return createDoc(dbUrl, headers, habit).then(res => {
+      if (res.status === 201) {
+        dispatch(getUser())
+      } else {
+        dispatch(errorMsg(res))
+      }
+    }).catch(err => err)
   }
 }
 
-export const deselectHabit = (id) => {
-  return (dispatch) => {
-    return deleteDocument(databaseUrl, headers, id)
-    .then(() => dispatch(getUser()))
-    .catch(error => dispatch(errorMessage(error)))
+export const deselectHabit = (id, rev) => {
+  return dispatch => {
+    return deleteDoc(dbUrl, headers, id, rev).then(res => {
+      if (res.status === 200) {
+        dispatch(getUser())
+      } else {
+        dispatch(errorMsg(res))
+      }
+    }).catch(err => err)
   }
 }

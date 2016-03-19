@@ -46,6 +46,6 @@ export default class Main extends Component {
     return (<Navigator.NavigationBar routeMapper={NavBarRouteMapper} />)
   }
   configureScene() {
-    return Navigator.SceneConfigs.FloatFromRight
+    return Navigator.SceneConfigs.FloatFromBottom
   }
 }
