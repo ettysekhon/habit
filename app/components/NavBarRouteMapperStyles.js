@@ -6,14 +6,11 @@ export default StyleSheet.create({
     color: 'rgb(255,255,255)',
     fontSize: 24
   },
-  navBarButtonIcon: {
-    fontSize: 24
-  },
   navBarButtonText: {
+    color: 'rgba(255,255,255,0.70)',
     fontSize: 14
   },
   navBarLeftButton: {
-    color: 'rgb(255,255,255)',
-    paddingLeft: 8
+    paddingLeft: 16
   }
 })
