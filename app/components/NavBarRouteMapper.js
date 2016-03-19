@@ -5,9 +5,9 @@ export const NavBarRouteMapper = {
   LeftButton: (route, navigator, index, navState) => {
     if (index === 0) {
       return (
-        <TouchableOpacity onPress={() => navigator.push({ id: 'dashboard', title: 'My Habits' })}>
+        <TouchableOpacity onPress={() => navigator.push({ id: 'habitlist', title: 'Habits' })}>
           <Text style={[ styles.navBarLeftButton, styles.navBarButtonText ]}>
-            &#x276e;&#x20;My Habits
+            &#x276e;&#x20;Habits
           </Text>
         </TouchableOpacity>
       )

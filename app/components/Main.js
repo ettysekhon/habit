@@ -23,20 +23,13 @@ export default class Main extends Component {
       <View style={styles.container}>
         <Navigator
           ref="navigator"
-          initialRoute={this.initialRoute()}
+          initialRoute={{ id: 'dashboard', title: 'My Habits', index: 0 }}
           renderScene={this.renderScene}
           navigationBar={this.renderNavBar()}
           configureScene={this.configureScene}
         />
       </View>
     )
-  }
-  initialRoute() {
-    if (this.props.state.user) {
-      return { id: 'dashboard', title: 'My Habits', index: 0 }
-    } else {
-      return { id: 'habitlist', title: 'Habits', index: 0 }
-    }
   }
   renderScene(route, navigator) {
     const { state, actions } = this.props
