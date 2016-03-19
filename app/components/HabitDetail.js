@@ -17,7 +17,7 @@ export default class HabitDetail extends Component {
         {(data.started) &&
         <View>
           <Text style={styles.contentHeader}>My Activity</Text>
-          <Text style={styles.contentText}>Started&#x20;on&#x20;{started}</Text>
+          <Text style={styles.contentText}>Started&#x20;{started}</Text>
         </View>}
         <Text style={styles.contentHeader}>{data.summary}</Text>
         <Text style={styles.contentText}>{data.description}</Text>
