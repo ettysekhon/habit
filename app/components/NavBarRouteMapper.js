@@ -1,5 +1,4 @@
 import React, { Text, TouchableOpacity } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialIcons'
 import styles from './NavBarRouteMapperStyles'
 
 export const NavBarRouteMapper = {
@@ -8,8 +7,7 @@ export const NavBarRouteMapper = {
       return (
         <TouchableOpacity onPress={() => navigator.push({ id: 'dashboard', title: 'My Habits' })}>
           <Text style={[ styles.navBarLeftButton, styles.navBarButtonText ]}>
-            <Icon name="chevron-left" style={styles.navBarButtonIcon} />
-            My Habits
+            &#x276e;&#x20;My Habits
           </Text>
         </TouchableOpacity>
       )
@@ -18,8 +16,7 @@ export const NavBarRouteMapper = {
     return (
       <TouchableOpacity onPress={() => navigator.pop()}>
         <Text style={[ styles.navBarLeftButton, styles.navBarButtonText ]}>
-          <Icon name="chevron-left" style={styles.navBarButtonIcon} />
-          {previousRoute.title}
+          &#x276e;&#x20;{previousRoute.title}
         </Text>
       </TouchableOpacity>
     )
