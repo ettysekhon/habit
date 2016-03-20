@@ -1,7 +1,7 @@
-import habits from './habits'
+import habit from './habit'
 import user from './user'
 
 export {
-  habits,
+  habit,
   user
 }
