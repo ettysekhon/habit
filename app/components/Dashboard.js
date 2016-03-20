@@ -8,7 +8,12 @@ export default class Dashboard extends Component {
     data: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
   };
-  render = () => {
+  constructor(props) {
+    super(props)
+    this.renderRow = this.renderRow.bind(this)
+    this.pressRow = this.pressRow.bind(this)
+  }
+  render() {
     const ds = new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 })
     const dataSource = ds.cloneWithRows(this.props.data || [])
     return (
@@ -22,8 +27,8 @@ export default class Dashboard extends Component {
         />
       </View>
     )
-  };
-  renderRow = (rowData: {}, sectionId: number, rowId: number) => {
+  }
+  renderRow(rowData: {}, sectionId: number, rowId: number) {
     return (
       <TouchableHighlight key={`${sectionId}${rowId}`} onPress={() => this.pressRow(rowData)}>
         <View style={styles.rowContentContainer}>
@@ -32,8 +37,8 @@ export default class Dashboard extends Component {
         </View>
       </TouchableHighlight>
     )
-  };
-  pressRow = (rowData: {}) => {
+  }
+  pressRow(rowData: {}) {
     this.props.navigator.push({ id: 'habitdetail', title: rowData.title, data: rowData })
-  };
+  }
 }
