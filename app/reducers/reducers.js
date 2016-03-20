@@ -1,7 +1,7 @@
 import habit from './habit'
-import user from './user'
+import dashboard from './dashboard'
 
 export {
   habit,
-  user
+  dashboard
 }

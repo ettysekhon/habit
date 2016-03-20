@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as habitActions from '../actions/habitActions'
-import { startHabit } from '../actions/userActions'
+import { startHabit } from '../actions/dashboardActions'
 import HabitList from '../components/HabitList'
 
 const mapStateToProps = (state, ownProps) => ({

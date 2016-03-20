@@ -7,11 +7,11 @@ import headers from '../constants/headers'
 
 const errorMsg = makeAction('ERROR', 'error')
 
-export const getUser = () => dispatch => {
+export const getDashboard = () => dispatch => {
   return readAllDoc(dbUrl, headers).then(res => res.json()).then(docs => {
     if (docs.rows) {
-      const user = docs.rows.map(row => (row.doc))
-      dispatch({ type: 'GET_USER', user })
+      const dashboard = docs.rows.map(row => (row.doc))
+      dispatch({ type: 'GET_DASHBOARD', dashboard })
     }
     if (docs.status) {
       dispatch(errorMsg(docs.status))
@@ -25,7 +25,7 @@ export const startHabit = habit => {
   return dispatch => {
     return createDoc(dbUrl, headers, habit).then(res => {
       if (res.status === 201) {
-        dispatch(getUser())
+        dispatch(getDashboard())
       } else {
         dispatch(errorMsg(res))
       }
@@ -39,7 +39,7 @@ export const endHabit = habit => {
   return dispatch => {
     return deleteDoc(dbUrl, headers, id, rev).then(res => {
       if (res.status === 200) {
-        dispatch(getUser())
+        dispatch(getDashboard())
       } else {
         dispatch(errorMsg(res))
       }

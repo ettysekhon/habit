@@ -1,16 +1,16 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as userActions from '../actions/userActions'
+import * as dashboardActions from '../actions/dashboardActions'
 import Dashboard from '../components/Dashboard'
 
 const mapStateToProps = (state, ownProps) => ({
   ...ownProps,
-  data: state.user
+  data: state.dashboard
 })
 
 const mapDispatchToProps = dispatch => {
   return {
-    actions: bindActionCreators(userActions, dispatch)
+    actions: bindActionCreators(dashboardActions, dispatch)
   }
 }
 
