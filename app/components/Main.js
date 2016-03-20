@@ -1,22 +1,14 @@
-import React, { Component, Navigator, PropTypes, View } from 'react-native'
-import Dashboard from '../components/Dashboard'
+import React, { Component, Navigator, View } from 'react-native'
+import Dashboard from '../containers/DashboardContainer'
 import HabitDetail from '../components/HabitDetail'
-import HabitList from '../components/HabitList'
+import HabitList from '../containers/HabitListContainer'
 import { NavBarRouteMapper } from '../components/NavBarRouteMapper'
 import styles from './MainStyles'
 
 export default class Main extends Component {
-  static propTypes = {
-    state: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired
-  };
   constructor(props) {
     super(props)
     this.renderScene = this.renderScene.bind(this)
-  }
-  componentDidMount() {
-    this.props.actions.getHabits()
-    this.props.actions.getUser()
   }
   render() {
     return (
@@ -32,14 +24,13 @@ export default class Main extends Component {
     )
   }
   renderScene(route, navigator) {
-    const { state, actions } = this.props
     switch (route.id) {
       case 'dashboard':
-        return (<Dashboard navigator={navigator} data={state.user} actions={actions} />)
+        return (<Dashboard navigator={navigator} />)
       case 'habitlist':
-        return (<HabitList navigator={navigator} data={state.habit} actions={actions} />)
+        return (<HabitList navigator={navigator} />)
       case 'habitdetail':
-        return (<HabitDetail navigator={navigator} data={route.data} actions={actions} />)
+        return (<HabitDetail navigator={navigator} data={route.data} actions={route.actions} />)
     }
   }
   renderNavBar() {

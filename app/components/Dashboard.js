@@ -13,6 +13,9 @@ export default class Dashboard extends Component {
     this.renderRow = this.renderRow.bind(this)
     this.pressRow = this.pressRow.bind(this)
   }
+  componentDidMount() {
+    this.props.actions.getUser()
+  }
   render() {
     const ds = new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 })
     const dataSource = ds.cloneWithRows(this.props.data || [])
@@ -39,6 +42,8 @@ export default class Dashboard extends Component {
     )
   }
   pressRow(rowData: {}) {
-    this.props.navigator.push({ id: 'habitdetail', title: rowData.title, data: rowData })
+    this.props.navigator.push({
+      id: 'habitdetail', title: rowData.title, data: rowData, actions: this.props.actions
+    })
   }
 }
