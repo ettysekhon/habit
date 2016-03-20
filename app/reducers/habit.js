@@ -1,6 +1,6 @@
 export default function habit(state = {}, action = {}) {
-  if (action.habit) {
-    return { ...action.habit }
+  if (action.habits) {
+    return { ...action.habits }
   } else {
     return state
   }
