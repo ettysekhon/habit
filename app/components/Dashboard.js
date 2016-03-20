@@ -11,10 +11,10 @@ export default class Dashboard extends Component {
   render = () => {
     const ds = new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 })
     const dataSource = ds.cloneWithRows(this.props.data || [])
-    const content = 'Insert compliance'
     return (
       <View style={styles.container}>
-        <ListHeader content={content} />
+        {(Object.keys(this.props.data).length === 0) &&
+        <ListHeader header="Hey, I see nothing here. Let's select one of the habits and get started." />}
         <ListView
           automaticallyAdjustContentInsets={false}
           dataSource={dataSource}

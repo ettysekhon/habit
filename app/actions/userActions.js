@@ -21,7 +21,9 @@ export const getUser = () => {
   }
 }
 
-export const selectHabit = habit => {
+export const startHabit = habit => {
+  const d = new Date()
+  habit.started = d.toJSON()
   return dispatch => {
     return createDoc(dbUrl, headers, habit).then(res => {
       if (res.status === 201) {
@@ -33,7 +35,9 @@ export const selectHabit = habit => {
   }
 }
 
-export const deselectHabit = (id, rev) => {
+export const endHabit = habit => {
+  const id = habit._id
+  const rev = habit._rev
   return dispatch => {
     return deleteDoc(dbUrl, headers, id, rev).then(res => {
       if (res.status === 200) {

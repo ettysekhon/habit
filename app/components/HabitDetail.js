@@ -10,28 +10,34 @@ export default class HabitDetail extends Component {
   };
   render() {
     const { data } = this.props
+    const started = new Date(data.started).toDateString()
     return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
+        {(data.started) &&
+        <View>
+          <Text style={styles.contentHeader}>My Activity</Text>
+          <Text style={styles.contentText}>Started&#x20;{started}</Text>
+        </View>}
         <Text style={styles.contentHeader}>{data.summary}</Text>
         <Text style={styles.contentText}>{data.description}</Text>
       </View>
       <View>
         {(data._id) ?
         <Button onPress={() => {
-          this.props.actions.deselectHabit(data._id, data._rev)
+          this.props.actions.endHabit(data)
           this.props.navigator.pop()
         }}>
           <View style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>DESELECT</Text>
+            <Text style={styles.buttonText}>END</Text>
           </View>
         </Button> :
         <Button onPress={() => {
-          this.props.actions.selectHabit(data)
+          this.props.actions.startHabit(data)
           this.props.navigator.pop()
         }}>
           <View style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>SELECT</Text>
+            <Text style={styles.buttonText}>START</Text>
           </View>
         </Button>}
       </View>
