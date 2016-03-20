@@ -37,7 +37,7 @@ export default class Main extends Component {
       case 'dashboard':
         return (<Dashboard navigator={navigator} data={state.user} actions={actions} />)
       case 'habitlist':
-        return (<HabitList navigator={navigator} data={state.habit} actions={actions} />)
+        return (<HabitList navigator={navigator} data={state.habits} actions={actions} />)
       case 'habitdetail':
         return (<HabitDetail navigator={navigator} data={route.data} actions={actions} />)
     }
