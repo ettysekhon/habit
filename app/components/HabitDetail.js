@@ -24,7 +24,7 @@ export default class HabitDetail extends Component {
       <View>
         {(this.props.data._id) ?
         <Button onPress={() => {
-          this.props.actions.endHabit(this.props.data)
+          this.props.actions.endUserhabit(this.props.data)
           this.props.navigator.pop()
         }}>
           <View style={styles.buttonContainer}>
@@ -32,7 +32,7 @@ export default class HabitDetail extends Component {
           </View>
         </Button> :
         <Button onPress={() => {
-          this.props.actions.startHabit(this.props.data)
+          this.props.actions.startUserhabit(this.props.data)
           this.props.navigator.pop()
         }}>
           <View style={styles.buttonContainer}>

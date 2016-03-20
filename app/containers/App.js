@@ -13,12 +13,11 @@ initializeDatabase(dbUrl)
 const logger = createLogger()
 
 let createStoreWithMiddleware
-// if (__DEV__) {
-//   createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore)
-// } else {
-//   createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
-// }
-createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
+if (__DEV__) {
+  createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore)
+} else {
+  createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
+}
 
 const reducer = combineReducers(reducers)
 const store = createStoreWithMiddleware(reducer)

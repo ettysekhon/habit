@@ -14,7 +14,7 @@ export default class Dashboard extends Component {
     this.pressRow = this.pressRow.bind(this)
   }
   componentDidMount() {
-    this.props.actions.getDashboard()
+    this.props.actions.getUserhabits()
   }
   render() {
     const ds = new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 })

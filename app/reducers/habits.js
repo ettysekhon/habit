@@ -1,4 +1,4 @@
-export default function habit(state = {}, action = {}) {
+export default function habits(state = {}, action = {}) {
   if (action.habits) {
     return { ...action.habits }
   } else {

@@ -1,7 +1,7 @@
-import habit from './habit'
-import dashboard from './dashboard'
+import habits from './habits'
+import userhabits from './userhabits'
 
 export {
-  habit,
-  dashboard
+  habits,
+  userhabits
 }
