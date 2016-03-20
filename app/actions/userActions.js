@@ -7,18 +7,16 @@ import headers from '../constants/headers'
 
 const errorMsg = makeAction('ERROR', 'error')
 
-export const getUser = () => {
-  return dispatch => {
-    return readAllDoc(dbUrl, headers).then(res => res.json()).then(docs => {
-      if (docs.rows) {
-        const user = docs.rows.map(row => (row.doc))
-        dispatch({ type: 'GET_USER', user })
-      }
-      if (docs.status) {
-        dispatch(errorMsg(docs.status))
-      }
-    }).catch(err => err)
-  }
+export const getUser = () => dispatch => {
+  return readAllDoc(dbUrl, headers).then(res => res.json()).then(docs => {
+    if (docs.rows) {
+      const user = docs.rows.map(row => (row.doc))
+      dispatch({ type: 'GET_USER', user })
+    }
+    if (docs.status) {
+      dispatch(errorMsg(docs.status))
+    }
+  }).catch(err => err)
 }
 
 export const startHabit = habit => {
