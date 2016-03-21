@@ -1,4 +1,5 @@
 export default function userhabits(state = {}, action = {}) {
+  let newState = {}
   switch (action.type) {
     case 'GET_USERHABITS':
       return Object.assign({}, state,
@@ -10,11 +11,11 @@ export default function userhabits(state = {}, action = {}) {
     case 'CREATE_USERHABIT':
       return { ...state, [action.userhabit._id]: action.userhabit }
     case 'DELETE_USERHABIT':
-      // return Object.assign({}, state, delete state[action.userhabit._id])
-      return Object.assign({}, state.filter((obj) => {
-        console.log(obj)
-        obj._id === action.userhabit._id
-      }, action.userhabit._id))
+      newState = Object.assign({}, state)
+      delete newState[action.userhabit._id]
+      console.log('state', state)
+      console.log('newState', newState)
+      return newState
     default:
       return state
   }
