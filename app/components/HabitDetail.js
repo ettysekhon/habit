@@ -9,31 +9,32 @@ export default class HabitDetail extends Component {
     actions: PropTypes.object.isRequired
   };
   render() {
-    const started = new Date(this.props.data.started).toDateString()
+    const { navigator, data, actions } = this.props
+    const started = new Date(data.started).toDateString()
     return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-        {(this.props.data.started) &&
+        {(data.started) &&
         <View>
           <Text style={styles.contentHeader}>My Activity</Text>
           <Text style={styles.contentText}>Started&#x20;{started}</Text>
         </View>}
-        <Text style={styles.contentHeader}>{this.props.data.summary}</Text>
-        <Text style={styles.contentText}>{this.props.data.description}</Text>
+        <Text style={styles.contentHeader}>{data.summary}</Text>
+        <Text style={styles.contentText}>{data.description}</Text>
       </View>
       <View>
-        {(this.props.data._id) ?
+        {(data._id) ?
         <Button onPress={() => {
-          this.props.actions.endUserhabit(this.props.data)
-          this.props.navigator.pop()
+          actions.deleteUserhabit(data)
+          navigator.pop()
         }}>
           <View style={styles.buttonContainer}>
             <Text style={styles.buttonText}>END</Text>
           </View>
         </Button> :
         <Button onPress={() => {
-          this.props.actions.startUserhabit(this.props.data)
-          this.props.navigator.pop()
+          actions.createUserhabit(data)
+          navigator.pop()
         }}>
           <View style={styles.buttonContainer}>
             <Text style={styles.buttonText}>START</Text>

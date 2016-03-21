@@ -12,38 +12,36 @@ export const getUserhabits = () => dispatch => {
     if (docs.rows) {
       const userhabits = docs.rows.map(row => (row.doc))
       dispatch({ type: 'GET_USERHABITS', userhabits })
-    }
-    if (docs.status) {
+    } else {
       dispatch(errorMsg(docs.status))
     }
   }).catch(err => err)
 }
 
-export const startUserhabit = habit => {
+export const createUserhabit = userhabit => {
   const d = new Date()
-  habit.started = d.toJSON()
+  userhabit.started = d.toJSON()
   return dispatch => {
-    return createDoc(dbUrl, headers, habit).then(res => {
-      if (res.status === 201) {
-        dispatch({ type: 'START_USERHABIT', habit })
-        dispatch(getUserhabits())
+    return createDoc(dbUrl, headers, userhabit).then(res => res.json()).then(doc => {
+      if (doc.ok) {
+        userhabit._id = doc.id
+        userhabit._rev = doc.rev
+        dispatch({ type: 'CREATE_USERHABIT', userhabit })
       } else {
-        dispatch(errorMsg(res))
+        dispatch(errorMsg(doc.status))
       }
     }).catch(err => err)
   }
 }
 
-export const endUserhabit = habit => {
-  const id = habit._id
-  const rev = habit._rev
+export const deleteUserhabit = userhabit => {
+  const { _id, _rev } = userhabit
   return dispatch => {
-    return deleteDoc(dbUrl, headers, id, rev).then(res => {
-      if (res.status === 200) {
-        dispatch({ type: 'END_USERHABIT', habit })
-        dispatch(getUserhabits())
+    return deleteDoc(dbUrl, headers, _id, _rev).then(res => res.json()).then(doc => {
+      if (doc.ok) {
+        dispatch({ type: 'DELETE_USERHABIT', userhabit })
       } else {
-        dispatch(errorMsg(res))
+        dispatch(errorMsg(doc.status))
       }
     }).catch(err => err)
   }

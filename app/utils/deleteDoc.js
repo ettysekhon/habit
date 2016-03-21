@@ -1,5 +1,5 @@
-export const deleteDoc = (dbUrl, headers, id, rev) => {
-  return fetch(`${dbUrl}/${id}?rev=${rev}`, {
+export const deleteDoc = (dbUrl, headers, _id, _rev) => {
+  return fetch(`${dbUrl}/${_id}?rev=${_rev}`, {
     method: 'DELETE',
     headers
   })
