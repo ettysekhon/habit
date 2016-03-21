@@ -1,18 +1,21 @@
 export default function userhabits(state = {}, action = {}) {
-  if (action.userhabits) {
-    return Object.assign({}, state,
-      action.userhabits.reduce((target, userhabit) => {
-        target[userhabit._id] = userhabit
-        return target
-      }, {})
-    )
+  switch (action.type) {
+    case 'GET_USERHABITS':
+      return Object.assign({}, state,
+        action.userhabits.reduce((obj, userhabit) => {
+          obj[userhabit._id] = userhabit
+          return obj
+        }, {})
+      )
+    case 'CREATE_USERHABIT':
+      return { ...state, [action.userhabit._id]: action.userhabit }
+    case 'DELETE_USERHABIT':
+      // return Object.assign({}, state, delete state[action.userhabit._id])
+      return Object.assign({}, state.filter((obj) => {
+        console.log(obj)
+        obj._id === action.userhabit._id
+      }, action.userhabit._id))
+    default:
+      return state
   }
-  if (action.userhabit) {
-    if (action.userhabit._id && state[action.userhabit._id]) {
-      console.log('REMOVE ME', action.userhabit._id)
-    } else {
-      return Object.assign({}, state, { [action.userhabit._id]: action.userhabit })
-    }
-  }
-  return state
 }
