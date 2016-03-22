@@ -1,0 +1,5 @@
+export const ERROR = 'ERROR'
+export const GET_HABITS = 'GET_HABITS'
+export const GET_USERHABITS = 'GET_USERHABITS'
+export const CREATE_USERHABIT = 'CREATE_USERHABIT'
+export const DELETE_USERHABIT = 'DELETE_USERHABIT'
