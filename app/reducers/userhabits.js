@@ -11,8 +11,8 @@ export default function userhabits(state = {}, action = {}) {
       return { ...state, [action.userhabit._id]: action.userhabit }
     case 'DELETE_USERHABIT':
       return Object.assign({},
-        Object.keys(state).reduce((result, k) => {
-          if (k !== action.userhabit._id) { result[k] = state[k] }
+        Object.keys(state).reduce((result, key) => {
+          if (key !== action.userhabit._id) { result[key] = state[key] }
           return result
         }, {})
       )
