@@ -18,8 +18,9 @@ export const getUserhabits = () => dispatch => {
   }).catch(err => err)
 }
 
-export const createUserhabit = userhabit => {
+export const createUserhabit = habit => {
   const d = new Date()
+  const userhabit = Object.assign({}, habit)
   userhabit.started = d.toJSON()
   return dispatch => {
     return createDoc(dbUrl, headers, userhabit).then(res => res.json()).then(doc => {
