@@ -4,21 +4,21 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
 import * as reducers from '../reducers/reducers'
-import Main from './Main'
 import { initializeDatabase } from '../utils/initializeDatabase'
 import dbUrl from '../constants/dbUrl'
+import Main from '../components/Main'
 
 initializeDatabase(dbUrl)
 
 const logger = createLogger()
 
 let createStoreWithMiddleware
-// if (__DEV__) {
-//   createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore)
-// } else {
-//   createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
-// }
-createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
+if (__DEV__) {
+  // createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore)
+  createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
+} else {
+  createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
+}
 
 const reducer = combineReducers(reducers)
 const store = createStoreWithMiddleware(reducer)

@@ -9,7 +9,7 @@ export default class HabitDetail extends Component {
     actions: PropTypes.object.isRequired
   };
   render() {
-    const { data } = this.props
+    const { navigator, data, actions } = this.props
     const started = new Date(data.started).toDateString()
     return (
     <View style={styles.container}>
@@ -25,16 +25,16 @@ export default class HabitDetail extends Component {
       <View>
         {(data._id) ?
         <Button onPress={() => {
-          this.props.actions.endHabit(data)
-          this.props.navigator.pop()
+          actions.deleteUserhabit(data)
+          navigator.pop()
         }}>
           <View style={styles.buttonContainer}>
             <Text style={styles.buttonText}>END</Text>
           </View>
         </Button> :
         <Button onPress={() => {
-          this.props.actions.startHabit(data)
-          this.props.navigator.pop()
+          actions.createUserhabit(data)
+          navigator.pop()
         }}>
           <View style={styles.buttonContainer}>
             <Text style={styles.buttonText}>START</Text>
