@@ -25,8 +25,7 @@ export const createUserhabit = habit => {
   return dispatch => {
     return createDoc(dbUrl, headers, userhabit).then(res => res.json()).then(doc => {
       if (doc.ok) {
-        userhabit._id = doc.id
-        userhabit._rev = doc.rev
+        [ userhabit._id, userhabit._rev ] = [ doc.id, doc.rev ]
         dispatch({ type: 'CREATE_USERHABIT', userhabit })
       } else {
         dispatch(errorMsg(doc.status))
